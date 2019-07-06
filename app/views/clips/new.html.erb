@@ -1,0 +1,33 @@
+<div class="clipnew-wrapper">
+	<div class="container">
+		<div class="row"style="border: 4px solid white; box-shadow: 0 0 5px gray;">
+			<div class="col-xs-9">
+				<h4>*投稿する際の諸注意*</h4>
+				<p>*YouTubeから投稿する際,その動画の埋め込みコードが</p>
+				<p>必要になります。コードの取得は画像の通りにお願い致します！</p>
+				<img src="/clipnew.jpg" alt="写真" width="800" height="400">
+				<p>*取得するコードは/embed/以降の11文字だけをコピーして下さい！</p>
+				<p>*コピーしたコードは指定された場所で貼り付けお願い致します!</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-9">
+				<h1>Clip Post</h1>
+				<%= form_for(@clip) do |f| %>
+
+                <h4>Clip名</h4>
+                <div><%= f.text_field :title, class: "clip-title" %></div>
+
+                <h4>Clip</h4>
+                <div><%= f.text_area :video, rows:'5', class: "clip",placeholder: "コードをここに" %></div>
+
+                <h4>Clip情報</h4>
+                <div><%= f.text_area :body, class: "clip-body" %></div>
+
+                <div><%= f.submit '投稿へ', class: "btn" %></div>
+
+              <% end %>
+			</div>
+		</div>
+	</div>
+</div>

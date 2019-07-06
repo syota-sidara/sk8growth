@@ -1,0 +1,35 @@
+<div class="spotindex-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<h1>Spot List</h1>
+					<%= link_to "追加", new_spot_path, class: "spot-form" %>
+			    </div>
+			</div>
+		</div>
+
+      <% @spots.each do |f| %>
+		<div class="row" style="padding-top: 20px;">
+			<%= link_to spot_path (f) do %>
+			<div class="row spot-box1" style="padding-top: 20px;">
+				<div class="col-xs-4">
+					<%= attachment_image_tag f, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "550x300" %>
+				</div>
+				<div class="col-xs-8" style="padding-left: 30px;">
+					<div class="spot-title">
+						<h2><%= f.title %></h2>
+					</div>
+					<div class="spot-address">
+						<p><%= f.address %></p>
+					</div>
+					<div class="spot-body">
+						<p><%= simple_format(f.body) %><p>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	 <% end %>
+	</div>
+</div>
