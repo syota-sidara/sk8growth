@@ -1,0 +1,24 @@
+<div class="trendnew-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-9">
+				<h1>Trend Post</h1>
+			   <%= form_for(@trend) do |f| %>
+				<h4>Trend Video</h4>
+				<div><%= f.text_area :video, rows:'5', class: "trend-video",placeholder: "コードをここに" %></div>
+				<h4>Trend Title</h4>
+				<div><%= f.text_field :title, class: "trend-title" %></div>
+				<h4>Trend Comment</h4>
+				<div><%= f.text_area :comment, class: "trend-comment" %></div>
+				<h4>Trend Font</h4>
+				<div><%= f.attachment_field :profile_image %></div>
+				<h4>Trend Body</h4>
+				<div><%= f.text_area :body, rows:'5', class: "form-control",placeholder: "内容1" %></div>
+				<h4>Trend Second Body</h4>
+				<div><%= f.text_area :secondbody, rows:'5', class: "form-control",placeholder: "内容2" %></div>
+				<div><%= f.submit '追加', class: "btn" %></div>
+			   <% end %>
+			</div>
+		</div>
+	</div>
+</div>
