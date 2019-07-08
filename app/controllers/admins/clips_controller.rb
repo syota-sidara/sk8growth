@@ -1,5 +1,5 @@
-class ClipsController < ApplicationController
-	def index
+class Admins::ClipsController < ApplicationController
+    def index
 		@clips = Clip.all.order(created_at: :desc)
 	end
 
@@ -14,7 +14,7 @@ class ClipsController < ApplicationController
 	def create
 		@clip = Clip.new(clip_params)
 		@clip.save
-		redirect_to clips_path
+		redirect_to admins_clips_path
 	end
 
 	def edit
@@ -24,7 +24,7 @@ class ClipsController < ApplicationController
 	def update
 		@clip = Clip.find(params[:id])
 		@clip.update(clip_params)
-		redirect_to clip_path
+		redirect_to admins_clip_path
 	end
 
 

@@ -1,0 +1,21 @@
+<div class="admins-clipshow-wrapper">
+	<div class="container">
+		<div class="row" style="padding-top: 100px;">
+			<div class="col-12">
+				<h1 style="text-align: center;"><%= @clip.title %><span style="padding-left: 20px;"><%= @clip.created_at.strftime('%Y/%m/%d') %><span></h1>
+				<div class="d-flex justify-content-center" style="padding: 10px">
+					<iframe width="800" height="500" src="https://www.youtube.com/embed/<%=@clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<p style="padding-top: 10px;"><%= @clip.body %></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-9">
+				<h2>コメント</h2>
+				<%#= text_area :page, :comtent %>
+				<textarea cols="150" id="page_content" name="page[content]" rows="5"></textarea>
+				<p style="float: right;"><%= link_to "コメント",class: "btn" %></p>
+			</div>
+		</div>
+	</div>
+</div>

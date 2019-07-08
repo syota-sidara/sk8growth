@@ -1,5 +1,5 @@
-class TrendsController < ApplicationController
-	def index
+class Admins::TrendsController < ApplicationController
+  def index
 		@trends = Trend.all.order(created_at: :desc)
 	end
 
@@ -14,7 +14,7 @@ class TrendsController < ApplicationController
 	def create
 		@trend = Trend.new(trend_params)
 		@trend.save
-		redirect_to trends_path
+		redirect_to admins_trends_path
 	end
 
 	def edit
@@ -24,7 +24,7 @@ class TrendsController < ApplicationController
 	def update
 		@trend = Trend.find(params[:id])
 		@trend.update(trend_params)
-		redirect_to trend_path
+		redirect_to admins_trend_path
 	end
 
 	

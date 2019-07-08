@@ -1,0 +1,24 @@
+<div class="admins-spotnew-wrapper">
+	<div class="container">
+		<div claas="row">
+			<div claas="col-xs-9">
+				<h1>Spot Post</h1>
+				<%= form_for(@spot) do |f| %>
+				<h4>Font</h4>
+				<div><%= f.attachment_field :profile_image %></div>
+				<h4>Spot Name</h4>
+				<div><%= f.text_field :title %></div>
+				<h4>Spot Address</h4>
+				<div><%= f.text_field :address %></div>
+				<h4>Spot Section</h4>
+				<div><%= f.text_area :body, rows:'5', class: "form-control",placeholder: "セクション内容" %></div>
+				<h4>Spot Contents</h4>
+				<div><%= f.text_area :content, rows:'5', class: "form-control",placeholder: "パーク内容" %></div>
+				<h4>Google Map</h4>
+				<div><%= f.text_field :map %></div>
+				<div><%= f.submit '追加', class: "btn" %></div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
