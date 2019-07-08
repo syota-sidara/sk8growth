@@ -24,6 +24,7 @@
 
   <body>
     <header>
+  <% if user_signed_in? %>
       <nav>
         <ul class="nav-list">
             <li class="nav-item dropdown" style="float: left;">
@@ -72,7 +73,7 @@
       // --></script>
       <!--★ここまでコピー-->
 
-
+    
       <div class="container">
         <div class="row">
           <nav>
@@ -94,18 +95,131 @@
         </div>
       </div>
     </header>
+  <% elsif admin_signed_in? %>
+      <nav>
+        <ul class="nav-list">
+            <li class="nav-item dropdown" style="float: left;">
+              <a class="fas fa-bars" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <%= link_to "HOME", admins_home_index_path, class: "dropdown-item" %>
+                 <%= link_to "CLIP", admins_clips_path, class: "dropdown-item" %>
+                 <%= link_to "SPOT", admins_spots_path, class: "dropdown-item" %>
+                 <%= link_to "TREND", admins_trends_path, class: "dropdown-item" %>
+              </div>
+            </li>
+          <h1>sk8growth</h1>
+              <li class="nav-list-item">
+                <%= link_to '' , destroy_admin_session_path, method: :delete, class: "header-title fas fa-sign-out-alt" %>
+              </li>
+              <li class="nav-list-item">
+                <%= link_to "Contact", class: "header-title fas fa-envelope" %>
+              </li>
+        </ul>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <nav>
+                <ul class="nav-admin">
+                      <li class="nav-admin-item">
+                        <%= link_to "HOME", admins_home_index_path, class: "admin-title" %>
+                      </li>
+                      <li class="nav-home-item">
+                        <%= link_to "CLIP", admins_clips_path, class: "admin-title" %>
+                      </li>
+                      <li class="nav-home-item">
+                        <%= link_to "SPOT", admins_spots_path, class: "admin-title" %>
+                      </li>
+                      <li class="nav-home-item">
+                        <%= link_to "TREND", admins_trends_path, class: "admin-title" %>
+                      </li>
+                    </ul>
+                </nav>
+        </div>
+      </div>
+    </header>
+  <% else %>
+      <nav>
+        <ul class="nav-list">
+            <li class="nav-item dropdown" style="float: left;">
+              <a class="fas fa-bars" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <%= link_to "HOME", root_path, class: "dropdown-item" %>
+                 <%= link_to "CLIP", clips_path, class: "dropdown-item" %>
+                 <%= link_to "SPOT", spots_path, class: "dropdown-item" %>
+                 <%= link_to "TREND", trends_path, class: "dropdown-item" %>
+              </div>
+            </li>
+          <h1>sk8growth</h1>
+              <li class="nav-list-item">
+                <%= link_to '' , destroy_user_session_path, method: :delete, class: "header-title fas fa-sign-out-alt" %>
+              </li>
+              <li class="nav-list-item">
+                <%= link_to "", new_user_session_path, class: "header-title fas fa-sign-in-alt" %>
+              </li>
+              <li class="nav-list-item">
+                <%= link_to "Contact", class: "header-title fas fa-envelope" %>
+              </li>
+        </ul>
+      </nav>
+      <!-- <div class="main-visual">
+        <img src="/sksk.jpg" alt="写真" width="100%" height="600">
+      </div> -->
+
+      <!--スライドショー -->
+         <!--★ここからコピー。下の１行は画像指定。必ず１番最初の画像のファイル名を記入。id="Ga"を必ず記入-->
+      <img src="sksk.jpg" id="Ga" alt="写真">
+
+      <script type="text/javascript"><!--
+      (function (){var i=0; //即時関数で囲んでグローバル変数を消すため、この行はこのままで
+
+      //★画像指定。増減可能。画像を順番に'●',と区切って、いくつでも並べる。最後の ] の前には ,(カンマ) 無し
+      var ga=['sksk.jpg','img1.jpg','img2.jpg','img3.jpg','yuuko1.jpg'];
+      var myurl='';      //★画像パス。文書とは別のフォルダーなどに入っている時は指定。全画像共通部分
+      var spd=5000;　    //★画像切替時間 1000=1秒
+
+      var load=new Array();//画像先読み込み。切替をスムーズにする
+      for (var p=0,len=ga.length; p<len; p++){load[p]=new Image();load[p].src=myurl+ga[p];}
+      function Show(){ Ga.src=myurl+ga[i%len]; i++; setTimeout(Show,spd);}
+      Show();
+      }());//即時関数終了
+      // --></script>
+      <!--★ここまでコピー-->
+
+    
+      <div class="container">
+        <div class="row">
+          <nav>
+                <ul class="nav-home">
+                      <li class="nav-home-item">
+                        <%= link_to "HOME", root_path, class: "home-title" %>
+                      </li>
+                      <li class="nav-home-item">
+                        <%= link_to "CLIP", clips_path, class: "home-title" %>
+                      </li>
+                      <li class="nav-home-item">
+                        <%= link_to "SPOT", spots_path, class: "home-title" %>
+                      </li>
+                      <li class="nav-home-item">
+                        <%= link_to "TREND", trends_path, class: "home-title" %>
+                      </li>
+                    </ul>
+                </nav>
+        </div>
+      </div>
+    </header>
+  <% end %>
     <%= yield %>
     <footer style="width: 100%; height: 100px; padding-top: 30px;">
       <div class="container" style="">
         <h5 style="float: right;">SK8GROWTH © </h5>
          <h5 style="float: left;">2019</h5>
          <div class="icon-grop" style="text-align: center;">
-            <i class="fab fa-twitter">
-              <a herf="https://twitter.com/racyo777"></a>
-            </i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-facebook-f"></i>
+            <a href="https://twitter.com/racyo777" class=""><i class="fab fa-twitter"></i></a>
+            <a><i class="fab fa-instagram"></i></a>
+            <a><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/" class=""><i class="fab fa-youtube"></i></a>
          </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
-class SpotsController < ApplicationController
-	def index
+class Admins::SpotsController < ApplicationController
+  def index
 		@spots = Spot.all.order(created_at: :desc)
 	end
 
@@ -14,7 +14,7 @@ class SpotsController < ApplicationController
 	def create
 		@spot = Spot.new(spot_params)
 		@spot.save
-		redirect_to spots_path
+		redirect_to admins_path
 	end
 
 	def edit
@@ -24,7 +24,7 @@ class SpotsController < ApplicationController
 	def update
 		@spot = Spot.find(params[:id])
 		@spot.update(spot_params)
-		redirect_to spot_path
+		redirect_to admins_spot_path
 	end
 
 	private
