@@ -1,4 +1,4 @@
-<div class="admins-clipindex-wrapper">
+<div class="admins-clipindex-wrapper" style="margin-top: 100px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -14,7 +14,6 @@
 						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= f.title %></p>
 						<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=f.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<% end %>
-					<%= link_to "編集", edit_admins_clip_path(f.id), class: "clip-edit" %>
 			    </div>
 		    <% end %>
          </div>

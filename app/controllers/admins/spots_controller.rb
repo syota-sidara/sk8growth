@@ -27,6 +27,12 @@ class Admins::SpotsController < ApplicationController
 		redirect_to admins_spot_path
 	end
 
+	def destroy
+		@spot = Spot.find(params[:id])
+		@spot.destroy
+		redirect_to admins_spots_path
+	end
+
 	private
 
     def spot_params

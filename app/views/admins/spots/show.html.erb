@@ -1,4 +1,4 @@
-<div class="admins-spotshow-wrapper">
+<div class="admins-spotshow-wrapper" style="margin-top: 100px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-9">
@@ -22,6 +22,8 @@
 				<h2>Google Map</h2>
 				   <iframe width="560" height="360" src="https://maps.google.co.jp/maps?output=embed&q=<%= @spot.map %>"></iframe>
 			</div>
+			<%= link_to "編集", edit_admins_spot_path(@spot.id), class: "spot-edit" %>
+			<%= link_to "削除",admins_spot_path(@spot.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "spot-destroy" %>
 		</div>
 	</div>
 </div>

@@ -7,6 +7,10 @@
 					<iframe width="800" height="500" src="https://www.youtube.com/embed/<%=@clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<p style="padding-top: 10px;"><%= @clip.body %></p>
+			<% if @clip.user_id == current_user.id%>
+				<%= link_to "編集", edit_clip_path(@clip.id), class: "clip-edit" %>
+				<%= link_to "削除",clip_path(@clip.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "clip-destroy" %>
+			<% end %>
 			</div>
 		</div>
 		<div class="row">
