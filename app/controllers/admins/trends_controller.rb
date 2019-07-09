@@ -27,6 +27,13 @@ class Admins::TrendsController < ApplicationController
 		redirect_to admins_trend_path
 	end
 
+	def destroy
+		@trend = Trend.find(params[:id])
+		@trend.destroy
+		redirect_to admins_trends_path
+	end
+
+
 	
 	private
 

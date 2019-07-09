@@ -1,4 +1,4 @@
-<div class="admins-trendindex-wrapper">
+<div class="admins-trendindex-wrapper" style="margin-top: 100px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -15,7 +15,6 @@
 					    <iframe width="300" height="200" src="https://www.youtube.com/embed/<%=f.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= f.title %></p>
 						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= f.comment %></p>
-						<%= link_to "編集", edit_admins_trend_path(f.id), class: "trend-edit" %>
 					<% end %>
 			    </div>
 		    <% end %>
