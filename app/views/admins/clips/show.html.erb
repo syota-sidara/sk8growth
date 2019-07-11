@@ -11,13 +11,35 @@
 				<%= link_to "削除",clip_path(@clip.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "clip-destroy" %>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-9">
-				<h2>コメント</h2>
-				<%#= text_area :page, :comtent %>
-				<textarea cols="150" id="page_content" name="page[content]" rows="5"></textarea>
-				<p style="float: right;"><%= link_to "コメント",class: "btn" %></p>
-			</div>
-		</div>
+	</div>
+</div>
+<div class="review-wrapper">
+	<div class="container">
+  		<h2>コメント一覧</h2>
+  		<div class="row"  style="border: 2px solid #999;">
+  			<% @clip.comments.each do |comment| %>
+  		  		<ol class="review-list">
+	        		<li class="comment">
+						<div class="comment-body bb">
+							<div class="comment-text">
+								<div class="comment-author clearfix">
+		                        	<span class="comment-meta">
+		                          	<span class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
+		                          	<span class="comment-date"><%= comment.user.name %>さんのレビュー</span>
+		                        	</span>
+								</div>
+								<div class="comment-entry"><%= comment.body %></div>
+							</div>
+						</div>
+	          		</li>
+					
+						<div class="text-right">
+							<p>
+								<%= link_to "削除", admins_clips_path(@clip,comment), method: :delete, "data-confirm" => "本当に削除しますか？",class: "btn1 btn-lg btn-base-1 mt-10" %>
+							</p>
+						</div>
+         		</ol>
+  	 		<% end %>
+  	 	</div>
 	</div>
 </div>

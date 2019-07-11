@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_062152) do
+ActiveRecord::Schema.define(version: 2019_07_11_081850) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,8 +35,41 @@ ActiveRecord::Schema.define(version: 2019_07_08_062152) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
-    t.string "video_id"
+    t.string "clip_id"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "spot_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "clip_id"
+    t.integer "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.string "title"
+    t.string "challenge"
+    t.string "video"
+    t.string "clip_id"
+    t.integer "trend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "spot_id"
+    t.integer "trend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "image_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_062152) do
     t.text "profile_image_id"
     t.text "content"
     t.string "map"
+    t.integer "location_id"
   end
 
   create_table "trends", force: :cascade do |t|

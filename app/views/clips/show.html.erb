@@ -3,6 +3,26 @@
 		<div class="row" style="padding-top: 100px;">
 			<div class="col-12">
 				<h1 style="text-align: center;"><%= @clip.title %><span style="padding-left: 20px;"><%= @clip.created_at.strftime('%Y/%m/%d') %><span></h1>
+                  <% if user_signed_in? %>
+					<% if @clip.favorited_by?(current_user) %>
+						<li>
+						<%= link_to clip_favorite_path(@clip.id), method: :delete do %>
+						  <i class="far fa-thumbs-up" aria-hidden="true" style="color: blue; font-size: 20px;"></i>
+						  <%= @clip.favorites.count %>
+						<% end %>
+						</li>
+					<% else %>
+						<li>
+						<%= link_to clip_favorites_path(@clip.id), method: :post do %>
+						  <i class="far fa-thumbs-up" aria-hidden="true" style="font-size: font-size: 20px;"></i>
+						  <%= @clip.favorites.count %>
+						<% end %>
+						</li>
+				    <% end %>
+				  <% else %>
+	  					<i class="far fa-heart" aria-hidden="true"></i>
+	  					<%= @clip.favorites.count %>
+		          <% end %>
 				<div class="d-flex justify-content-center" style="padding: 10px">
 					<iframe width="800" height="500" src="https://www.youtube.com/embed/<%=@clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
@@ -16,10 +36,49 @@
 		<div class="row">
 			<div class="col-xs-9">
 				<h2>コメント</h2>
+				<%= form_for [@clip, @comment] do |f| %>
+					<div class="row">
+						<%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+						<div class="add-review" style="padding: 10px;">
+							<%= f.submit "送信する", class: "btn1 btn-lg btn-base-1 mt-20 pull-right" %>
+						</div>
+					</div>
+				<% end %>
 				<%#= text_area :page, :comtent %>
-				<textarea cols="150" id="page_content" name="page[content]" rows="5"></textarea>
-				<p style="float: right;"><%= link_to "コメント",class: "btn" %></p>
+				<!-- <textarea cols="150" id="page_content" name="page[content]" rows="5"></textarea>
+				<p style="float: right;"><%#= link_to "コメント",class: "btn" %></p> -->
 			</div>
 		</div>
+	</div>
+</div>
+<div class="review-wrapper">
+	<div class="container">
+  		<h2>コメント一覧</h2>
+  		<% @clip.comments.each do |comment| %>
+  		   <div class="row"  style="border: 2px solid #999;">
+  		  		<ol class="review-list">
+	        		<li class="comment">
+						<div class="comment-body bb">
+							<div class="comment-text">
+								<div class="comment-author clearfix">
+		                        	<span class="comment-meta">
+		                          	<span class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
+		                          	<span class="comment-date"><%= comment.user.name %>さんのレビュー</span>
+		                        	</span>
+								</div>
+								<div class="comment-entry"><%= comment.body %></div>
+							</div>
+						</div>
+	          		</li>
+					<% if current_user.id == comment.user_id %>
+						<div class="text-right">
+							<p>
+								<%= link_to "削除", clip_comment_path(@clip,comment), method: :delete, "data-confirm" => "本当に削除しますか？",class: "btn1 btn-lg btn-base-1 mt-10" %>
+							</p>
+						</div>
+					<% end %>
+         		</ol>
+  	 	   </div>
+  	 	<% end %>
 	</div>
 </div>

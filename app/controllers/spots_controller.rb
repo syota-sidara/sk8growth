@@ -14,7 +14,7 @@ class SpotsController < ApplicationController
 	def create
 		@spot = Spot.new(spot_params)
 		@spot.save
-		redirect_to spots_path
+		redirect_to admins_spots_path
 	end
 
 	def edit
@@ -30,7 +30,7 @@ class SpotsController < ApplicationController
 	private
 
     def spot_params
-    	params.require(:spot).permit(:title, :address, :body, :profile_image, :content, :map)
+    	params.require(:spot).permit(:title,:address,:body,:content,:map,:location_id,:profile_image)
     end
 
 end

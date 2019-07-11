@@ -10,22 +10,25 @@
 			</div>
 		</div>
 
-      <% @spots.each do |f| %>
+      <% @spots.each do |spot| %>
 		<div class="row" style="padding-top: 20px;">
-			<%= link_to admins_spot_path (f) do %>
+			<%= link_to admins_spot_path (spot) do %>
 			<div class="row spot-box1" style="padding-top: 20px;">
 				<div class="col-xs-4">
-					<%= attachment_image_tag f, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "550x300" %>
+					<%= attachment_image_tag spot, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "550x300" %>
 				</div>
 				<div class="col-xs-8" style="padding-left: 30px;">
 					<div class="spot-title">
-						<h2><%= f.title %></h2>
+						<h2><%= spot.title %></h2>
 					</div>
 					<div class="spot-address">
-						<p><%= f.address %></p>
+						<p><%= spot.address %></p>
 					</div>
 					<div class="spot-body">
-						<p><%= simple_format(f.body) %><p>
+						<p><%= simple_format(spot.body) %><p>
+					</div>
+					<div class="spot-location">
+						<p><%= spot.location.name %></p>
 					</div>
 				</div>
 			</div>
