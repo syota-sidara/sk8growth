@@ -6,6 +6,7 @@ class ClipsController < ApplicationController
 	def show
 		@clip = Clip.find(params[:id])
 		@user = User.find_by(id: @clip.user_id)
+        @comment = Comment.new
 	end
 
 	def new

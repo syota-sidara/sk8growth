@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
  		 case resource
  		 	when Admin
  		 		 flash[:notice] = "サインインしました"
-    			admins_home_index_path
+    			admins_homes_path
   			when User
   				 flash[:notice] = "サインインしました"
     			root_path

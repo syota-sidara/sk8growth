@@ -9,13 +9,13 @@
 			</div>
 		</div>
 		<div class="row-all col-12">
-			<% @trends.each do |f| %>
+			<% @trends.each do |trend| %>
 				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px;">
-					<%= link_to trend_path (f) do %>
-					    <iframe width="300" height="200" src="https://www.youtube.com/embed/<%=f.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= f.title %></p>
-						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= f.comment %></p>
-						<%= link_to "編集", edit_trend_path(f.id), class: "trend-edit" %>
+					<%= link_to trend_path (trend) do %>
+					    <iframe width="300" height="200" src="https://www.youtube.com/embed/<%=trend.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= trend.title %></p>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= trend.comment %></p>
+						<%= link_to "編集", edit_trend_path(trend.id), class: "trend-edit" %>
 					<% end %>
 			    </div>
 		    <% end %>
