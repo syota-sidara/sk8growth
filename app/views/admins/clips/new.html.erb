@@ -24,6 +24,9 @@
                 <h4>Clip情報</h4>
                 <div><%= f.text_area :body, class: "clip-body" %></div>
 
+                <h4>clip Trick</h4>
+                <div><%= f.collection_select :trick_id, Trick.all,:id, :name %></div>
+
                 <div><%= f.submit '投稿へ', class: "btn" %></div>
 
               <% end %>

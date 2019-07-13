@@ -1,4 +1,4 @@
-class LocationsController < ApplicationController
+class Admins::LocationsController < ApplicationController
   def new
   	@location = Location.new
   end
@@ -6,11 +6,7 @@ class LocationsController < ApplicationController
   def create
   	@location = Location.new(location_params)
   	@location.save
-  	redirect_to new_location_path
-  end
-
-  def show
-  	@location = Location.find(params[:id])
+  	redirect_to new_admins_location_path
   end
 
   private

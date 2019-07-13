@@ -1,2 +1,16 @@
-<h1>Admins::Homes#edit</h1>
-<p>Find me in app/views/admins/homes/edit.html.erb</p>
+<div class="admin-homeedit-wrapper" style="margin-top: 100px;">
+	<div class="container">
+		<div class="col-xs-9">
+			<h2>Home</h2>
+			<%= form_for(@home,url: admins_home_path) do |f| %>
+			<h2>Title</h2>
+			<div><%= f.text_field :title %></div>
+			<h2>Challenge</h2>
+			<div><%= f.text_field :challenge %></div>
+			<h2>HOW TO</h2>
+			<div><%= f.text_area :video, rows:'5', class: "clip",placeholder: "コードをここに" %></div>
+			<div><%= f.submit '更新へ', class: "btn" %></div>
+			<% end %>
+		</div>
+	</div>
+</div>
