@@ -10,14 +10,7 @@
 
 
     
-    <style type="text/css">
-    /*★必須。スライド画像用の指定*/
-    #Ga{
-    width:100%;/*★画像横幅*/
-    height:600px;/*★画像縦幅*/
-    display: block;/*★ブロック要素指定。上記の中央位置指定を有効にする為*/
-    }
-    </style>
+   
 
 
   </head>
@@ -101,31 +94,10 @@
   <% end %>
 </header>
 <% if user_signed_in? %>
-  <!-- <div class="main-visual">
-        <img src="/sksk.jpg" alt="写真" width="100%" height="600">
-      </div> -->
+  <div class="row">
+    <img src="/sksk.jpg" alt="写真" width="100%" hight="100px">
+  </div>
 
-      <!--スライドショー -->
-         <!--★ここからコピー。下の１行は画像指定。必ず１番最初の画像のファイル名を記入。id="Ga"を必ず記入-->
-      <img src="sksk.jpg" id="Ga" alt="写真" style="margin-top: 100px">
-
-      <script type="text/javascript"><!--
-      (function (){var i=0; //即時関数で囲んでグローバル変数を消すため、この行はこのままで
-
-      //★画像指定。増減可能。画像を順番に'●',と区切って、いくつでも並べる。最後の ] の前には ,(カンマ) 無し
-      var ga=['sksk.jpg','img1.jpg','img2.jpg','img3.jpg','yuuko1.jpg'];
-      var myurl='';      //★画像パス。文書とは別のフォルダーなどに入っている時は指定。全画像共通部分
-      var spd=5000;　    //★画像切替時間 1000=1秒
-
-      var load=new Array();//画像先読み込み。切替をスムーズにする
-      for (var p=0,len=ga.length; p<len; p++){load[p]=new Image();load[p].src=myurl+ga[p];}
-      function Show(){ Ga.src=myurl+ga[i%len]; i++; setTimeout(Show,spd);}
-      Show();
-      }());//即時関数終了
-      // --></script>
-      <!--★ここまでコピー-->
-
-    
       <div class="container">
         <div class="row">
           <nav>
@@ -148,31 +120,9 @@
       </div>
 <% elsif admin_signed_in? %>
 <% else %>
-    <!-- <div class="main-visual">
-        <img src="/sksk.jpg" alt="写真" width="100%" height="600">
-      </div> -->
-
-      <!--スライドショー -->
-         <!--★ここからコピー。下の１行は画像指定。必ず１番最初の画像のファイル名を記入。id="Ga"を必ず記入-->
-      <img src="sksk.jpg" id="Ga" alt="写真" style="margin-top: 100px">
-
-      <script type="text/javascript"><!--
-      (function (){var i=0; //即時関数で囲んでグローバル変数を消すため、この行はこのままで
-
-      //★画像指定。増減可能。画像を順番に'●',と区切って、いくつでも並べる。最後の ] の前には ,(カンマ) 無し
-      var ga=['sksk.jpg','img1.jpg','img2.jpg','img3.jpg','yuuko1.jpg'];
-      var myurl='';      //★画像パス。文書とは別のフォルダーなどに入っている時は指定。全画像共通部分
-      var spd=5000;　    //★画像切替時間 1000=1秒
-
-      var load=new Array();//画像先読み込み。切替をスムーズにする
-      for (var p=0,len=ga.length; p<len; p++){load[p]=new Image();load[p].src=myurl+ga[p];}
-      function Show(){ Ga.src=myurl+ga[i%len]; i++; setTimeout(Show,spd);}
-      Show();
-      }());//即時関数終了
-      // --></script>
-      <!--★ここまでコピー-->
-
-    
+    <div class="row">
+      <img src="/sksk.jpg" alt="写真" width="100%" hight="100px">
+    </div>
       <div class="container">
         <div class="row">
           <nav>

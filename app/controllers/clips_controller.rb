@@ -53,6 +53,6 @@ class ClipsController < ApplicationController
     private
 
     def clip_params
-    	params.require(:clip).permit(:title, :video, :body)
+    	params.require(:clip).permit(:title, :video, :body, :trick_id)
     end
 end

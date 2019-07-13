@@ -18,7 +18,7 @@ class Admins::HomesController < ApplicationController
   def create
     @home = Home.new(home_params)
     @home.save
-    redirect_to admins_homes_path
+    redirect_to admins_home_path
   end
 
   def destroy

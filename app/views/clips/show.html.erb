@@ -26,6 +26,9 @@
 				<div class="d-flex justify-content-center" style="padding: 10px">
 					<iframe width="800" height="500" src="https://www.youtube.com/embed/<%=@clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
+				<div class="clip-trick">
+				    <p><%= @clip.trick.name %></p>
+			    </div>
 				<p style="padding-top: 10px;"><%= @clip.body %></p>
 			<% if @clip.user_id == current_user.id%>
 				<%= link_to "編集", edit_clip_path(@clip.id), class: "clip-edit" %>
