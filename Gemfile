@@ -68,3 +68,4 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'carrierwave'
 gem 'ransack'
+gem 'kaminari','~> 1.1.1'

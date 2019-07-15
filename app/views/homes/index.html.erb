@@ -36,7 +36,6 @@
 		</div>
 		<div class="row-all col-12">
 			<% @all_ranks.each.with_index(1) do |rank,i| %>
-			<%# @clips.each do |clip| %>
 				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px">
 					<h4 style="margin-bottom: 0; padding-top: 10px;padding-left: 10%;"><%= i %>位</h4>
 					<%= link_to clip_path (rank) do %>
