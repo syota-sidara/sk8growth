@@ -21,14 +21,41 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-8">
-				<h3>This Month's Ranking</h3>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/ZPCbsMA5r20" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-		</div>
 		<%= link_to "追加", new_admins_home_path, class: "home-form" %>
 		<%= link_to "編集",  edit_admins_home_path(@home.id), class: "home-edit" %>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<h3>Favorites Ranking</h3>
+				</div>
+			</div>
+		</div>
+		<div class="row-all col-12">
+			<% @clips.each do |clip| %>
+				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px">
+					<%= link_to clip_path (clip) do %>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= clip.title %></p>
+						<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div class="index-favorites">
+						<i class="far fa-thumbs-up" aria-hidden="true" style="font-size: font-size: 20px;"></i>
+						<%= clip.favorites.count %>
+					</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>	
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>		
 		<div class="row" style="margin-top: 10px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
