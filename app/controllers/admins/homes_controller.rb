@@ -1,4 +1,11 @@
 class Admins::HomesController < ApplicationController
+  
+  def index
+    @home = Home.find(1)
+    @trends = Trend.all.order(created_at: :desc)
+    # @trend = Trend.first(3)
+  end
+
   def new
     @home = Home.new
   end
@@ -7,9 +14,6 @@ class Admins::HomesController < ApplicationController
     @home = Home.find(params[:id])
   end
 
-  def index
-    @home = Home.find(1)
-  end
 
   def top
   	render layout: false
