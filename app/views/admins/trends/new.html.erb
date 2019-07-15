@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-xs-9">
 				<h1>Trend Post</h1>
-			   <%= form_for(@trend) do |f| %>
+			   <%= form_for(@trend, url:admins_trends_path) do |f| %>
 				<h4>Trend Video</h4>
 				<div><%= f.text_area :video, rows:'5', class: "trend-video",placeholder: "コードをここに" %></div>
 				<h4>Trend Title</h4>

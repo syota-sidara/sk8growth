@@ -4,7 +4,6 @@
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
 					<h1>Trend List</h1>
-					<%= link_to "追加", new_trend_path, class: "trend-form" %>
 				</div>
 			</div>
 		</div>
@@ -15,7 +14,6 @@
 					    <iframe width="300" height="200" src="https://www.youtube.com/embed/<%=trend.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= trend.title %></p>
 						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= trend.comment %></p>
-						<%= link_to "編集", edit_trend_path(trend.id), class: "trend-edit" %>
 					<% end %>
 			    </div>
 		    <% end %>

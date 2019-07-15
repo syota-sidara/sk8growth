@@ -16,6 +16,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
+					<h3>How To</h3>
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @home.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 			</div>
@@ -26,5 +27,42 @@
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/ZPCbsMA5r20" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<h2>TREND</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row-all col-12">		
+			<% @trends.each do |trend| %>
+				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px;">
+					<%= link_to trend_path (trend) do %>
+					    <iframe width="300" height="200" src="https://www.youtube.com/embed/<%=trend.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= trend.title %></p>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= trend.comment %></p>
+					<% end %>
+			    </div>
+		    <% end %>
+		</div>	
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="row-all col-12">		
+			<h2>favorite</h2>
+			<% @clips.each do |clip| %>
+				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px;">
+					<%= link_to clip_path(clip) do %>
+					    <iframe width="300" height="200" src="https://www.youtube.com/embed/<%=clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= clip.title %></p>
+					<% end %>
+			    </div>
+		    <% end %>
+		</div>
+		
 	</div>
 </div>
