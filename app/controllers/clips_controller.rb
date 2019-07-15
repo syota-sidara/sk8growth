@@ -1,6 +1,10 @@
 class ClipsController < ApplicationController
 	def index
 		@clips = Clip.all.order(created_at: :desc)
+	    # 検索オブジェクト
+	    @search = Clip.ransack(params[:q])
+	    # 検索結果
+	    @clips = @search.result
 	end
 
 	def show
