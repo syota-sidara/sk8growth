@@ -4,6 +4,8 @@
 			<div class="col-xs-9">
 				<h1>Spot 編集</h1>
 				<%= form_for(@spot) do |f| %>
+				<h4>location</h4>
+				<%= f.collection_select :location_id, Location.all,:id, :name %>
 				<h4>Font</h4>
 				<div><%= f.attachment_field :profile_image %></div>
 				<h4>Spot Name</h4>
