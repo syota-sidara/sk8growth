@@ -7,7 +7,28 @@
 			    </div>
 			</div>
 		</div>
-      <% @spots.each do |spot| %>
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<nav>
+						<ul>
+							<li><a href="#Hokkaido">北海道</a></li>
+							<li><a href="#Tohoku">東北</a></li>
+							<li><a href="#Kanto">関東</a></li>
+							<li><a href="#Tokai-Hokuriku">東海・北陸</a></li>
+							<li><a href="#Kinki">近畿</a></li>
+							<li><a href="#Chugoku">中国</a></li>
+							<li><a href="#Shikoku-Kyushu">四国・九州</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	<% @locations.each do |location| %>
+	<h2>
+		<p><%=location.name %></p>
+	</h2>
+      <% location.spots.each do |spot| %>
 		<div class="row" style="padding-top: 20px;">
 			<%= link_to spot_path (spot) do %>
 			<div class="row spot-box1" style="padding-top: 20px;">
@@ -32,5 +53,11 @@
 			<% end %>
 		</div>
 	 <% end %>
+	 <br>
+	 <br>
+	 <br>
+	 <br>
+	 <br>
+	<% end %>
 	</div>
 </div>

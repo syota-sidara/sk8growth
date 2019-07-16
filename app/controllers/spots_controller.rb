@@ -1,6 +1,9 @@
 class SpotsController < ApplicationController
 	def index
-		@spots = Spot.all.order(created_at: :desc)
+		# @spots = Spot.all.order(created_at: :desc)
+		# @locations = Location.all.order(created_at: :desc).limit(3)
+		#@locations = Location.find(Spot.group(:location_id).order(created_at: :desc).limit(3).pluck(:location_id))
+		@locations = Location.all
 	end
 
 	def show
