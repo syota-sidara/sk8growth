@@ -12,6 +12,7 @@ class ClipsController < ApplicationController
 		@clip = Clip.find(params[:id])
 		@user = User.find_by(id: @clip.user_id)
         @comment = Comment.new
+        impressionist(@clip, nil )
 	end
 
 	def new

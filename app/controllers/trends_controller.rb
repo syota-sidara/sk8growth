@@ -1,6 +1,7 @@
 class TrendsController < ApplicationController
 	def index
-		@trends = Trend.all.order(created_at: :desc)
+		# @trends = Trend.all.order(created_at: :desc)
+		@trends = Trend.page(params[:page]).reverse_order
 	end
 
 	def show
