@@ -6,11 +6,12 @@
 					<%= search_form_for @search do |f| %>
 				    <!--nameカラムに対して部分一致検索ができる-->
 				    	<div class="form-group">
-				    		<%= f.label :trick_name_cont, "検索" %>
+				    		<%#= f.label :trick_name_cont, "検索" %>
 				    		<%= f.text_field :trick_name_cont, class: "form-control" %>
 				    	</div>
 				    	<div class="actions">
-				    		<%= f.submit"Search" %>
+				    		<%#= f.submit"検索" %>
+				    		<input type="submit" class="btn btn-primary btn-sm" value="検索">
 				  		</div>
 					<% end %>
 				</div>
@@ -30,6 +31,7 @@
 					<%= link_to clip_path (clip) do %>
 						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= clip.title %></p>
 						<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			          <%=  clip.impressionist_count %>
 					<% end %>
 			    </div>
 		    <% end %>
@@ -37,3 +39,5 @@
          </div>
 	</div>
 </div>
+
+

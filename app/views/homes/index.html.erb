@@ -1,22 +1,39 @@
 <div class="admin-homeindex-wrapper" style="margin-top: 100px;">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-12">
 				<div class="d-flex justify-content-center">
 					<h2><%= @home.title %></h2>
+				</div>
+			</div>		
+		</div>
+		<div class="row">
+		    <div class="col-12">
+		    	<div class="d-flex justify-content-center">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @clip.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 		    </div>
 		</div>
-		<div class="row" style="padding: 50px;">
+		<div class="card text-center" style="margin-top: 100px;">
+			<div class="card-header">
 				<h2>今月の Trick Challenge</h2>
-			    <h1 style="margin: 0 60px;"><%= @home.challenge %></h1>
-			    <%= link_to "投稿へ", new_clip_path, class: "btn" %>
+			</div>
+			<div class="card-body">
+				<h2 class="card-title">今月の Trick Challenge<br><%= @home.challenge %></h2>
+				<p class="card-text">今すぐ投稿してみよう！！！</p>
+				<%= link_to "投稿へ", new_clip_path, class: "btn btn-primary" %>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 100px;">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<h3>HOW TO</h3>
+				</div>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h3>How To</h3>
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @home.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 			</div>
@@ -75,3 +92,7 @@
 		</div>	
 	</div>
 </div>
+
+
+
+

@@ -8,7 +8,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
     
    
 
@@ -93,9 +92,16 @@
   <% end %>
 </header>
 <% if user_signed_in? %>
-  <div class="row">
-    <img src="/sksk.jpg" alt="写真" width="100%" hight="100px">
-  </div>
+<div style="margin-top: 100px;"></div>
+  <div id="row-font">
+        <div id="theTarget">
+            <div style="background-image: url(/img1.jpg)"></div>
+            <div style="background-image: url(/img2.jpg)"></div>
+            <div style="background-image: url(/img3.jpg)"></div>
+            <div style="background-image: url(/sksk.jpg)"></div>
+            <div style="background-image: url(/yuuko1.jpg)"></div>
+        </div>
+    </div>
 
       <div class="container">
         <div class="row">
@@ -119,9 +125,17 @@
       </div>
 <% elsif admin_signed_in? %>
 <% else %>
-    <div class="row">
-      <img src="/sksk.jpg" alt="写真" width="100%" hight="100px">
+<div style="margin-top: 100px;"></div>
+    <div class="row-font">
+        <div class="theTarget">
+            <div style="background-image: url(/img1.jpg)"></div>
+            <div style="background-image: url(/img2.jpg)"></div>
+            <div style="background-image: url(/img3.jpg)"></div>
+            <div style="background-image: url(/sksk.jpg)"></div>
+            <div style="background-image: url(/yuuko1.jpg)"></div>
+        </div>
     </div>
+
       <div class="container">
         <div class="row">
           <nav>
@@ -174,5 +188,7 @@
         </div>
       </nav>
     </footer>
+    <script src="javascripts/jquery-3.4.1.min.js"></script>   
+    <script src="javascripts/skippr.min.js"></script> 
   </body>
 </html>

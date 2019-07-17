@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require_tree ../../../app/assets/stylesheets/.
  *= require_self
  */
 
@@ -215,5 +216,17 @@ nav{
 	font-weight:bolder;
 }
 
+/*spot/index*/
+.area-list{
+	list-style: none;
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 18px;
+	font-weight:bolder;
+}
 
 
+
+#row-font {
+	height: 800px;
+}
