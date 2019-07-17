@@ -23,7 +23,10 @@ class ClipsController < ApplicationController
 		@clip = Clip.new(clip_params)
 		@clip.user_id = current_user.id
 		if @clip.save
+		   flash[:notice] = "追加しました"
 		   redirect_to clips_path
+		else
+			render :new
 		end
 	end
 
@@ -38,7 +41,10 @@ class ClipsController < ApplicationController
 		@clip = Clip.find(params[:id])
 		@clip.user_id = current_user.id
 		if @clip.update(clip_params)
+		　　flash[:notice] = "更新しました"
 		   redirect_to clip_path
+		else
+			render :edit
 		end
 	end
 
@@ -46,8 +52,10 @@ class ClipsController < ApplicationController
 
 	def destroy
 		@clip = Clip.find(params[:id])
-		@clip.destroy
-		redirect_to clips_path
+		if @clip.destroy
+		   flash[:notice]
+		   redirect_to clips_path
+		end
 	end
 
 	

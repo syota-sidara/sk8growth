@@ -13,6 +13,12 @@
 		<div class="row">
 			<div class="col-xs-9">
 				<h1>Clip Post</h1>
+
+				<% if @clip.errors.any? %>
+					<p class="alert-danger"><strong>空白の欄があります。すべての記入欄を埋めてください</strong></p>
+				<% end %>
+
+
 				<%= form_for(@clip, url: clips_path) do |f| %>
 
                 <h4>Clip名</h4>
