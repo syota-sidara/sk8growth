@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel='stylesheet' href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <link rel="stylesheet" href="slick.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -16,7 +17,13 @@
 
   <body>
   <header id="header">
+
+    <% if user_signed_in? %>
+      <div class="header-title"><%= current_user.name %>login中</div>
+    <% end %>
+
   <% if user_signed_in? %>
+
       <nav>
         <ul class="nav-list">
             <li class="nav-item dropdown" style="float: left;">
@@ -90,10 +97,72 @@
         </ul>
       </nav>
   <% end %>
+    <% if flash[:notice] %>
+       <p class="alert-success" style="text-align: center; height: 30px; font-size: 20px;margin-bottom: 0;"><%= flash[:notice] %></p>
+     <% end %>
 </header>
 <% if user_signed_in? %>
 <div style="margin-top: 100px;"></div>
-  <div id="row-font">
+
+
+
+    <div class="slider">
+        <div><img src="/img1.jpg" alt=""></div>
+        <div><img src="/img2.jpg" alt=""></div>
+        <div><img src="/img3.jpg" alt=""></div>
+        <div><img src="/sksk.jpg" alt=""></div>
+        <div><img src="/yuuko1.jpg" alt=""></div>
+    </div>
+    <script>
+      $('.slider').slick({
+      // アクセシビリティ。左右ボタンで画像の切り替えをできるかどうか
+      accessibility: true,
+      // 自動再生。trueで自動再生される。
+      autoplay: true,
+      // 自動再生で切り替えをする時間
+      autoplaySpeed: 3000,
+      // 自動再生や左右の矢印でスライドするスピード
+      speed: 400,
+      // 自動再生時にスライドのエリアにマウスオンで一時停止するかどうか
+      pauseOnHover: true,
+      // 自動再生時にドットにマウスオンで一時停止するかどうか
+      pauseOnDotsHover: true,
+      // 切り替えのアニメーション。ease,linear,ease-in,ease-out,ease-in-out
+      cssEase: 'ease',
+      // 画像下のドット（ページ送り）を表示
+      dots: false,
+      // ドットのclass名をつける
+      dotsClass: 'dot-class',
+      // ドラッグができるかどうか
+      draggable: true,
+      // 切り替え時のフェードイン設定。trueでon
+      fade: false,
+      // 左右の次へ、前へボタンを表示するかどうか
+      arrows: true,
+      // 無限スクロールにするかどうか。最後の画像の次は最初の画像が表示される。
+      infinite: true,
+      // 最初のスライダーの位置
+      initialSlide: 0,
+      // 画像の遅延表示。‘ondemand’or'progressive'
+      lazyLoad: ‘ondemand’,
+      // スライドのエリアにマウスオーバーしている間、自動再生を止めるかどうか。
+      pauseOnHover: true
+      // スライドのエリアに画像がいくつ表示されるかを指定
+      slidesToShow: 4,
+      // 一度にスライドする数
+      slidesToScroll: 1,
+      // タッチスワイプに対応するかどうか
+      swipe: true,
+      // 縦方向へのスライド
+      vertical: false,
+      // 表示中の画像を中央へ
+    　centerMode: true,
+      // 中央のpadding
+      centerPadding: '60px'
+    });
+
+    </script>
+ <!--  <div id="row-font">
         <div id="theTarget">
             <div style="background-image: url(/img1.jpg)"></div>
             <div style="background-image: url(/img2.jpg)"></div>
@@ -102,7 +171,7 @@
             <div style="background-image: url(/yuuko1.jpg)"></div>
         </div>
     </div>
-
+ -->
       <div class="container">
         <div class="row">
           <nav>
@@ -188,7 +257,7 @@
         </div>
       </nav>
     </footer>
-    <script src="javascripts/jquery-3.4.1.min.js"></script>   
-    <script src="javascripts/skippr.min.js"></script> 
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="slick.min.js"></script>
   </body>
 </html>
