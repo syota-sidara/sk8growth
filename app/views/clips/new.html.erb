@@ -1,16 +1,26 @@
 <div class="clipnew-wrapper">
 	<div class="container">
 		<div class="row"style="border: 4px solid white; box-shadow: 0 0 5px gray;">
-			<div class="col-xs-9">
-				<h4>*投稿する際の諸注意*</h4>
-				<p>*YouTubeから投稿する際,その動画の埋め込みコードが</p>
-				<p>必要になります。コードの取得は画像の通りにお願い致します！</p>
-				<img src="/clipnew.jpg" alt="写真" width="800" height="400">
-				<p>*取得するコードは/embed/以降の11文字だけをコピーして下さい！</p>
-				<p>*コピーしたコードは指定された場所で貼り付けお願い致します!</p>
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<h4>*投稿する際の諸注意*</h4>
+				</div>
+				<div class="d-flex justify-content-center" style="padding-top: 10px;">
+					<p><strong>*YouTubeから投稿する際,その動画の埋め込みコードが</strong></p>
+					<p><strong>必要になります。コードの取得は画像の通りにお願い致します！</strong></p>
+				</div>
+				<div class="d-flex justify-content-center" style="padding-top: 30px;">
+					<img src="/clipnew.jpg" alt="写真" width="800" height="360">
+				</div>
+				<div class="d-flex justify-content-center" style="padding-top: 30px;">
+					<p><strong>*取得するコードは/embed/以降の11文字だけをコピーして下さい！</strong></p>
+				</div>
+				<div class="d-flex justify-content-center">
+					<p><strong>*コピーしたコードは指定された場所で貼り付けお願い致します!</strong></p>
+				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top: 30px;">
 			<div class="col-xs-9">
 				<h1>Clip Post</h1>
 
@@ -24,16 +34,16 @@
                 <h4>Clip名</h4>
                 <div><%= f.text_field :title, class: "clip-title" %></div>
 
-                <h4>Clip</h4>
-                <div><%= f.text_area :video, rows:'5', class: "clip",placeholder: "コードをここに" %></div>
+                <h4>Clipコード</h4>
+                <div><%= f.text_area :video, rows:'5', size: "30x1", class: "clip",placeholder: "コードをここに" %></div>
 
                 <h4>Clip情報</h4>
-                <div><%= f.text_area :body, class: "clip-body" %></div>
+                <div><%= f.text_area :body, size: "125x5", class: "clip-body" %></div>
 
-                <h4>clip Trick</h4>
+                <h4>Clip Trick</h4>
                 <div><%= f.collection_select :trick_id, Trick.all,:id, :name %></div>
 
-                <div><%= f.submit '投稿へ', class: "btn" %></div>
+                <div style="padding-top: 20px;"><%= f.submit '投稿へ', class: "btn", style: "width:100%" %></div>
 
               <% end %>
 			</div>
