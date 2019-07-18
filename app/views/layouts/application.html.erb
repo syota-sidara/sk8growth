@@ -7,6 +7,10 @@
     <link rel='stylesheet' href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
     <link rel="stylesheet" href="slick.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/skippr.min.js"></script> 
+    <script src="js/script.js"></script> 
+    <!-- <script src="slick.min.js"></script> -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     
@@ -16,7 +20,7 @@
   </head>
 
   <body>
-  <header id="header">
+  <header id="header" style="height: 125px;">
 
     <% if user_signed_in? %>
       <div class="header-title"><%= current_user.name %>login中</div>
@@ -106,7 +110,7 @@
 
 
 
-    <div class="slider">
+    <!-- <div class="slider">
         <div><img src="/img1.jpg" alt=""></div>
         <div><img src="/img2.jpg" alt=""></div>
         <div><img src="/img3.jpg" alt=""></div>
@@ -161,8 +165,8 @@
       centerPadding: '60px'
     });
 
-    </script>
- <!--  <div id="row-font">
+    </script> -->
+  <div id="row-font">
         <div id="theTarget">
             <div style="background-image: url(/img1.jpg)"></div>
             <div style="background-image: url(/img2.jpg)"></div>
@@ -171,7 +175,7 @@
             <div style="background-image: url(/yuuko1.jpg)"></div>
         </div>
     </div>
- -->
+
       <div class="container">
         <div class="row">
           <nav>
@@ -195,8 +199,8 @@
 <% elsif admin_signed_in? %>
 <% else %>
 <div style="margin-top: 100px;"></div>
-    <div class="row-font">
-        <div class="theTarget">
+    <div id="row-font">
+        <div id="theTarget">
             <div style="background-image: url(/img1.jpg)"></div>
             <div style="background-image: url(/img2.jpg)"></div>
             <div style="background-image: url(/img3.jpg)"></div>
@@ -227,7 +231,7 @@
       </div>
 <% end %>
     <%= yield %>
-    <div style="margin-bottom: 150px;">
+    <div style="margin-bottom: 500px;">
     </div>
     <footer id="footer">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -257,7 +261,37 @@
         </div>
       </nav>
     </footer>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="slick.min.js"></script>
+
+<script>
+  
+
+ $(document).on('turbolinks:load',function(){
+// オプションを指定してSkipprの実行
+    $("#theTarget").skippr({
+        // スライドショーの変化 ("fade" or "slide")
+        transition : 'slide',
+        // 変化に係る時間(ミリ秒)
+        speed : 1000,
+        // easingの種類
+        easing : 'easeOutQuart',
+        // ナビゲーションの形("block" or "bubble")
+        navType : 'block',
+        // 子要素の種類("div" or "img")
+        childrenElementType : 'img',
+        // ナビゲーション矢印の表示(trueで表示)
+        arrows : true,
+        // スライドショーの自動再生(falseで自動再生なし)
+        autoPlay : true,
+        // 自動再生時のスライド切替間隔(ミリ秒)
+        autoPlayDuration : 3000,
+        // キーボードの矢印キーによるスライド送りの設定(trueで有効)
+        keyboardOnAlways : true,
+        // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
+        hidePrevious : false
+    });
+    });
+ 
+
+</script>
   </body>
 </html>

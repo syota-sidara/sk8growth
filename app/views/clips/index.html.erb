@@ -4,24 +4,21 @@
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
 					<%= search_form_for @search do |f| %>
-				    <!--nameカラムに対して部分一致検索ができる-->
-				    	<div class="form-group">
-				    		<%#= f.label :trick_name_cont, "検索" %>
-				    		<%= f.text_field :trick_name_cont, class: "form-control" %>
-				    	</div>
-				    	<div class="actions">
-				    		<%#= f.submit"検索" %>
-				    		<input type="submit" class="btn btn-primary btn-sm" value="検索">
-				  		</div>
+						<form method="get" action="#" class="search_container">
+						  <%= f.text_field :trick_name_cont %>
+						  <button type="submit">
+						  	<i class="fas fa-search"></i>
+						  </button>
+						</form>
 					<% end %>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top: 50px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h1>Clip List</h1>
-					<%= link_to "", new_clip_path, class: "fas fa-video" %>
+					<h3>Clip List</h3>
+					<div style="padding-left: 20px; font-size: 30px;"><%= link_to "", new_clip_path, class: "fas fa-video" %></div>
 				</div>
 			</div>
 		</div>
@@ -29,7 +26,8 @@
 			<% @clips.each do |clip| %>
 				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px">
 					<%= link_to clip_path (clip) do %>
-						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= clip.title %><span style="margin: 20px"></span><%= clip.impressionist_count %></p>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= clip.title %><span style="margin: 20px"></span>
+							<span class="box-count"><%= clip.impressionist_count %></span></p>
 						<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<% end %>
 			    </div>

@@ -11,7 +11,7 @@
 		<div class="row" style="padding: 50px;">
 				<h2>今月の Trick Challenge</h2>
 			    <h1 style="margin: 0 60px;"><%= @home.challenge %></h1>
-			    <%= link_to "投稿へ", new_clip_path, class: "btn" %>
+			    <%= link_to "投稿へ", new_admins_clip_path, class: "btn" %>
 		</div>
 		<div class="row">
 			<div class="col-12">
@@ -21,7 +21,6 @@
 				</div>
 			</div>
 		</div>
-		<%= link_to "追加", new_admins_home_path, class: "home-form" %>
 		<%= link_to "編集",  edit_admins_home_path(@home.id), class: "home-edit" %>
 		<br>
 		<br>

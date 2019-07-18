@@ -15,15 +15,15 @@
  *= require_self
  */
 
-@import "bootstrap";
-@import "slick-theme";
-@import "slick"; 
-
 * {
-	margin: 0;
+    margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
+@import "bootstrap";
+ 
+
 
 
 
@@ -227,6 +227,136 @@ nav{
 
 
 
+/*スライドショー*/
 #row-font {
 	height: 800px;
+}
+
+
+
+/*home/js*/
+#animation {
+margin: 50px 0;
+font-size: 40px;
+font-weight: bold;
+color: #000f1e;
+}
+
+#animation2 {
+margin: 50px 0;
+font-size: 40px;
+font-weight: bold;
+color: #000f1e;
+}
+
+#animation3 {
+margin: 50px 0;
+font-size: 40px;
+font-weight: bold;
+color: #000f1e;
+}
+
+#animation4 {
+margin: 50px 0;
+font-size: 40px;
+font-weight: bold;
+color: #000f1e;
+}
+
+#animation5 {
+margin: 50px 0;
+font-size: 40px;
+font-weight: bold;
+color: #000f1e;
+}
+
+#animation6 {
+margin: 50px 0;
+font-size: 40px;
+font-weight: bold;
+color: #000f1e;
+}
+
+
+
+.fadeInDown {
+ -webkit-animation-fill-mode:both;
+ -ms-animation-fill-mode:both;
+ animation-fill-mode:both;
+ -webkit-animation-duration:1s;
+ -ms-animation-duration:1s;
+ animation-duration:1s;
+ -webkit-animation-name: fadeInDown;
+ animation-name: fadeInDown;
+ visibility: visible !important;
+}
+@-webkit-keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
+
+
+
+
+
+h3{
+	position: relative;
+	padding: 10px 20px;
+	font-size:50px;
+	text-align:center;
+	border-top: solid 1px #325A8C;
+	border-bottom: solid 1px #325A8C;
+}
+h3::before,
+h3::after{
+	content: '';
+	position: absolute;
+	top: -10px;
+	width: 1px;
+	height: calc(100% + 20px);
+	background-color: #325A8C;
+}
+h3::before{left: 10px;}
+h3::after{right: 10px;}
+
+h3 {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+h3:before, h3:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+h3:before {
+  left:0;
+}
+h3:after {
+  right: 0;
+}
+
+
+.box-count {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #2c2c2f;
+    background: #cde4ff;
+}
+
+.clip-trick {
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #2c2c2f;
+    background: #cde4ff;
 }

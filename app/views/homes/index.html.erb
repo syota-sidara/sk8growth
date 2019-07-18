@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h2><%= @home.title %></h2>
+					<h2 id="animation"><%= @home.title %></h2>
 				</div>
 			</div>		
 		</div>
@@ -14,9 +14,9 @@
 				</div>
 		    </div>
 		</div>
-		<div class="card text-center" style="margin-top: 100px;">
+		<div class="card text-center" style="margin-top: 100px;" id="animation2">
 			<div class="card-header">
-				<h2>今月の Trick Challenge</h2>
+				<p>今月の Trick Challenge</p>
 			</div>
 			<div class="card-body">
 				<h2 class="card-title">今月の Trick Challenge<br><%= @home.challenge %></h2>
@@ -27,13 +27,13 @@
 		<div class="row" style="margin-top: 100px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h3>HOW TO</h3>
+					<h2 id="animation3">HOW TO</h2>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<div class="d-flex justify-content-center">
+				<div class="d-flex justify-content-center" id="animation4">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @home.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h3>Favorites Ranking</h3>
+					<h2 id="animation5">FAVORITE RANKING</h2>
 				</div>
 			</div>
 		</div>
@@ -75,7 +75,7 @@
 		<div class="row" style="margin-top: 10px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h2>TREND</h2>
+					<h2 id="animation6">TREND</h2>
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,92 @@
 					<% end %>
 			    </div>
 		    <% end %>
-		</div>	
+
+		</div>
+
+
+		<script>
+
+			$('#animation').css('visibility','hidden');
+			$(window).scroll(function(){
+			 var windowHeight = $(window).height(),
+			     topWindow = $(window).scrollTop();
+			 $('#animation').each(function(){
+			  var targetPosition = $(this).offset().top;
+			  if(topWindow > targetPosition - windowHeight + 100){
+			   $(this).addClass("fadeInDown");
+			  }
+			 });
+			});
+
+			$('#animation2').css('visibility','hidden');
+			$(window).scroll(function(){
+			 var windowHeight = $(window).height(),
+			     topWindow = $(window).scrollTop();
+			 $('#animation2').each(function(){
+			  var targetPosition = $(this).offset().top;
+			  if(topWindow > targetPosition - windowHeight + 100){
+			   $(this).addClass("fadeInDown");
+			  }
+			 });
+			});
+
+			$('#animation3').css('visibility','hidden');
+			$(window).scroll(function(){
+			 var windowHeight = $(window).height(),
+			     topWindow = $(window).scrollTop();
+			 $('#animation3').each(function(){
+			  var targetPosition = $(this).offset().top;
+			  if(topWindow > targetPosition - windowHeight + 100){
+			   $(this).addClass("fadeInDown");
+			  }
+			 });
+			});
+
+			$('#animation4').css('visibility','hidden');
+			$(window).scroll(function(){
+			 var windowHeight = $(window).height(),
+			     topWindow = $(window).scrollTop();
+			 $('#animation4').each(function(){
+			  var targetPosition = $(this).offset().top;
+			  if(topWindow > targetPosition - windowHeight + 100){
+			   $(this).addClass("fadeInDown");
+			  }
+			 });
+			});
+
+			$('#animation5').css('visibility','hidden');
+			$(window).scroll(function(){
+			 var windowHeight = $(window).height(),
+			     topWindow = $(window).scrollTop();
+			 $('#animation5').each(function(){
+			  var targetPosition = $(this).offset().top;
+			  if(topWindow > targetPosition - windowHeight + 100){
+			   $(this).addClass("fadeInDown");
+			  }
+			 });
+			});
+
+			$('#animation6').css('visibility','hidden');
+			$(window).scroll(function(){
+			 var windowHeight = $(window).height(),
+			     topWindow = $(window).scrollTop();
+			 $('#animation6').each(function(){
+			  var targetPosition = $(this).offset().top;
+			  if(topWindow > targetPosition - windowHeight + 100){
+			   $(this).addClass("fadeInDown");
+			  }
+			 });
+			});
+
+
+
+
+
+
+
+
+		</script>	
 	</div>
 </div>
 
