@@ -2,25 +2,29 @@
 	<div class="container">
 		<div class="row" style="padding-top: 100px;">
 			<div class="col-12">
-				<h1 style="text-align: center;"><%= @clip.title %><span style="padding-left: 20px;"><%= @clip.created_at.strftime('%Y/%m/%d') %><span></h1>
+			<div style="padding: 20px; background: #fff; -webkit-box-shadow: 0 0 50px #add8e6 inset, 5px 5px 0 #cecece; -moz-box-shadow: 0 0 50px #add8e6 inset, 5px 5px 0 #cecece; box-shadow: 0 0 50px #add8e6 inset, 5px 5px 0 #cecece; font-size: 90%;">
+			
+				
+				<h1 style="text-align: center;"><%= @clip.created_at.strftime('%Y/%m/%d') %><span style="padding-left: 20px;"><br><%= @clip.title %></span></h1>
+              </div>
                   <% if user_signed_in? %>
 					<% if @clip.favorited_by?(current_user) %>
-						<li>
+						<li style="list-style: none;" >
 						<%= link_to clip_favorite_path(@clip.id), method: :delete do %>
-						  <i class="far fa-thumbs-up" aria-hidden="true" style="color: blue; font-size: 20px;"></i>
+						  <i class="far fa-thumbs-up" aria-hidden="true" style="color: blue; font-size: 50px;"></i>
 						  <%= @clip.favorites.count %>
 						<% end %>
 						</li>
 					<% else %>
-						<li>
+						<li style="list-style: none;">
 						<%= link_to clip_favorites_path(@clip.id), method: :post do %>
-						  <i class="far fa-thumbs-up" aria-hidden="true" style="font-size: font-size: 20px;"></i>
+						  <i class="far fa-thumbs-up" aria-hidden="true" style="font-size: 50px;"></i>
 						  <%= @clip.favorites.count %>
 						<% end %>
 						</li>
 				    <% end %>
 				  <% else %>
-	  					<i class="far fa-heart" aria-hidden="true"></i>
+	  					<i class="far fa-heart" aria-hidden="true" style="font-size: 50px;"></i>
 	  					<%= @clip.favorites.count %>
 		          <% end %>
 				<div class="d-flex justify-content-center" style="padding: 10px">
@@ -30,17 +34,16 @@
 				    <p><%= @clip.trick.name %></p>
 			    </div>
 				<p style="padding-top: 10px;"><%= @clip.body %></p>
+
+
 			<% if @clip.user_id == current_user.id%>
 
-
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-			  編集
-			</button>
-
-
-
-				<%= link_to "削除",clip_path(@clip.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "clip-destroy" %>
-
+             <div class="d-flex justify-content-end">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				  編集
+				</button>
+			    <%= link_to "削除",clip_path(@clip.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "clip-destroy" %>
+            </div>
 　　　　　　　　　<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 100px;">
 	　　　　　　　　　<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -70,11 +73,6 @@
 					</div>
 					</div>
 				</div>
-
-
-
-
-
 			<% end %>
 			</div>
 		</div>
@@ -83,7 +81,7 @@
 				<h2>コメント</h2>
 				<%= form_for [@clip, @comment] do |f| %>
 					<div class="row">
-						<%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+						<%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントをここに", style: "width: 100%;" %>
 						<div class="add-review" style="padding: 10px;">
 							<%= f.submit "送信する", class: "btn1 btn-lg btn-base-1 mt-20 pull-right" %>
 						</div>

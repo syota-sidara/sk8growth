@@ -1,7 +1,8 @@
 class Admins::HomesController < ApplicationController
   
   def index
-    @home = Home.find(1)
+    
+    @home = Home.find(3)
     @trends = Trend.all.order(created_at: :desc).limit(3)
     @clips = Clip.find(Favorite.group(:clip_id).order('count(clip_id) desc').limit(10).pluck(:clip_id))
   end
@@ -22,7 +23,7 @@ class Admins::HomesController < ApplicationController
   def create
     @home = Home.new(home_params)
     @home.save
-    redirect_to admins_home_path
+    redirect_to admins_homes_path
   end
 
   def destroy

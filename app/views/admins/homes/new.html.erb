@@ -9,6 +9,9 @@
 			<div><%= f.text_field :challenge %></div>
 			<h2>HOW TO</h2>
 			<div><%= f.text_area :video, rows:'5', class: "clip",placeholder: "コードをここに" %></div>
+			<%#= f.fields_for :homes do |home| %>
+			<%#= render 'home_fields', f:home %>
+			<%# end %>
 			<div><%= f.submit '投稿へ', class: "btn" %></div>
 			<% end %>
 		</div>
