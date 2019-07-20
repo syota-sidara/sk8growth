@@ -1,15 +1,29 @@
-<div class="master-top-wrapper">
-	<div class="top-image">
-		<div class="container">
-			<div class="top-title">
-				<h2 class="sans white">master</h2>
-			</div>
-			<div class="btn-position">
-			
-				<div class="sign clearfix">
-					<%= link_to 'ログイン',new_admin_session_path,class: "sans white" %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sk8growth</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" >
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  	<div class="master-top-wrapper">
+  		<div class="container">
+  			<div class="top-title">
+  				<h2 class="sans white">master</h2>
+		    </div>
+		    <div class="btn-position">
+		    	<div class="sign clearfix">
+					<%= link_to '新規登録',new_admin_registration_path,class: "sans white" %>
 				</div>
-			</div>
+		    	<div class="sign clearfix">
+		    		<%= link_to 'ログイン',new_admin_session_path,class: "sans white" %>
+		        </div>
+		    </div>
 		</div>
 	</div>
-</div>
+  	
+  </body>
+</html>

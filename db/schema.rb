@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_034653) do
+ActiveRecord::Schema.define(version: 2019_07_20_153631) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 2019_07_17_034653) do
     t.text "content"
     t.string "map"
     t.integer "location_id"
+    t.string "url"
   end
 
   create_table "trends", force: :cascade do |t|
@@ -122,6 +123,7 @@ ActiveRecord::Schema.define(version: 2019_07_17_034653) do
     t.text "profile_image_id"
     t.text "comment"
     t.text "secondbody"
+    t.string "url"
   end
 
   create_table "tricks", force: :cascade do |t|

@@ -17,12 +17,13 @@ Rails.application.routes.draw do
   end
   resources :spots, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   resources :trends, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+  resources :users, only: [:show, :edit, :update]
   
   namespace :admins do
      resources :locations, only: [:new, :create]
      resources :tricks, only: [:new, :create]
   	 resources :homes, only: [:index, :new, :edit, :create, :update, :destroy]
-  	 resources :clips, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+  	 resources :clips, only: [:index, :show, :destroy]
   	 resources :spots, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   	 resources :trends, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   end

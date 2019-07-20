@@ -7,26 +7,6 @@ class Admins::ClipsController < ApplicationController
 		@clip = Clip.find(params[:id])
 	end
 
-	def new
-		@clip = Clip.new
-	end
-
-	def create
-		@clip = Clip.new(clip_params)
-		@clip.save
-		redirect_to admins_clips_path
-	end
-
-	def edit
-		@clip = Clip.find(params[:id])
-	end
-
-	def update
-		@clip = Clip.find(params[:id])
-		@clip.update(clip_params)
-		redirect_to admins_clip_path
-	end
-
 	def destroy
 		@clip = Clip.find(params[:id])
 		@clip.destroy
