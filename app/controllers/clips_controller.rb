@@ -2,9 +2,9 @@ class ClipsController < ApplicationController
 	def index
 		@search = Clip.ransack(params[:q])
 		if params[:q]
-		  @clips = @search.result.page(params[:page]).per(9)
+		  @clips = @search.result.page(params[:page]).per(12)
 		else
-		  @clips = Clip.all.order(created_at: :desc).page(params[:page]).per(9)
+		  @clips = Clip.all.order(created_at: :desc).page(params[:page]).per(12)
 		end
 	end
 

@@ -1,0 +1,114 @@
+<div class="mapage-wrapper">
+	<div class="container"  style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px">
+		<div class="row">
+			<div class="col-xs-4">
+				<h4>NAME</h4>
+			</div>
+				<div class="col-12">
+					<div class="d-flex justify-content-center">
+						<%= @user.name %>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<h4>Email</h4>
+			</div>
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<%= @user.email %>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+					<i class="far fa-thumbs-up"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="margin-top: 100px;">
+	  <div class="modal-dialog modal-dialog-scrollable" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalScrollableTitle">いいね!</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <% @favorite_clips.each do |favorite_clip| %>
+	        <%= link_to clip_path (favorite_clip) do %>
+	           <div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px;">
+					  <p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= favorite_clip.title %></p>
+					  <div class="col-12">
+					  	<div class="d-flex justify-content-center">
+							<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=favorite_clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					  </div>
+			    </div>
+			 <% end %>
+			<% end %>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="container" style="padding-top: 20px;">
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-end">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-right: 30px;">
+						  編集
+					</button>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 100px;">
+	　　　　　　　　　<div class="modal-dialog" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+					    <h5 class="modal-title" id="exampleModalLabel">USER EDIT</h5>
+					    <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+					      <span aria-hidden="true">&times;</span>
+					    </button>
+					  </div>
+					  <div class="modal-body">
+							<%= form_for(@user) do |f| %>
+
+			                <h4>User名</h4>
+			                <div><%= f.text_field :name, class: "User-title" %></div>
+
+			                <h4>Email</h4>
+			                <div><%= f.email_field :email %></div>
+
+			                <h4>Pasword</h4>
+			                <div><%= f.password_field :password %></div>
+
+			                <h4>Pasword(確認用)</h4>
+			                <div><%= f.password_field :password_confirmation %></div>
+					  </div>
+					  <div class="modal-footer">
+					    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+					    <div><%= f.submit '保存', class: "btn" %></div>
+					  </div>
+					  <% end %>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+ 
