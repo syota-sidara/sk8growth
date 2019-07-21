@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :clips, only: [:index, :show, :new, :edit, :create, :update, :destroy] do
       resources :comments,  only: [:create, :destroy]
-      resources :favorites, only: [:create, :destroy]
+      resource :favorite, only: [:create, :destroy]
   end
   resources :spots, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   resources :trends, only: [:index, :show, :new, :edit, :create, :update, :destroy]

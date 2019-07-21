@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :set_clip
 	def create
   	  clip = Clip.find(params[:clip_id])
       # favorite = current_user.favorites.new(clip_id: clip.id)

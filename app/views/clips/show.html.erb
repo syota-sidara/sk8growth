@@ -7,7 +7,6 @@
 				<div class="d-flex justify-content-center"><p style="font-size: 50px; font-family: Impact"><%= @clip.title %></p></div>
 				<!-- <h1 style="text-align: center;"><%#= @clip.created_at.strftime('%Y/%m/%d') %><span style="padding-left: 20px;"><br><%= @clip.title %></span></h1> -->
               </div>
-
               
                     <div id="favorite_btn_<%= @clip.id %>">
 					   <%= render partial: 'favorite_form', locals: { clip: @clip } %>
