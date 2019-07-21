@@ -1,4 +1,5 @@
 class ClipsController < ApplicationController
+	before_action :authenticate_user!
 	def index
 		@search = Clip.ransack(params[:q])
 		if params[:q]

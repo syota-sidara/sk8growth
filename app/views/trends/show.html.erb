@@ -1,51 +1,53 @@
 <div class="trendshow-wrapper">
 	<div class="container">
-		<div class="row">
+		<div class="row" style="margin-bottom: 50px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
 					<iframe width="800" height="500" src="https://www.youtube.com/embed/<%=@trend.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
+	<div class="title4">
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h6>TREND</h6>
+					<h6 style="color: #fff;">TREND</h6>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h1><%= @trend.title %></h1>
+					<h1 style="color: #fff;"><%= @trend.title %></h1>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<p><%= @trend.created_at.strftime('%Y/%m/%d') %></p>
+					<p style="color: #fff;"><%= @trend.created_at.strftime('%Y/%m/%d') %></p>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+	</div>
+		<div class="row" style="margin-top: 50px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<p><%= simple_format(@trend.body) %></p>
+					<p><strong><%= simple_format(@trend.body) %></strong></p>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top: 50px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-				  <%= attachment_image_tag @trend, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "550x300" %>
+				  <%= attachment_image_tag @trend, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "600x300" %>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top: 50px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<p><%= simple_format(@trend.secondbody) %></p>
+					<p><strong><%= simple_format(@trend.secondbody) %></strong></p>
 				</div>
 			</div>
 		</div>
