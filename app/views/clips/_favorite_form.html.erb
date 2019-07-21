@@ -8,7 +8,7 @@
 	</li>
 <% else %>
 	<li style="list-style: none;">
-	<%= link_to clip_favorites_path(clip), method: :post,style: "display:block;", remote: true do %>
+	<%= link_to clip_favorite_path(clip), method: :post,style: "display:block;", remote: true do %>
 	  <i class="far fa-thumbs-up" aria-hidden="true" style="font-size: 50px;"></i>
 	  <%= clip.favorites.count %>
 	<% end %>
