@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 	    @favorite = Favorite.all.order(created_at: :desc)
 	    @favorite_clips = Clip.find(current_user.favorites.pluck(:clip_id))
 	    # render layout: false
-	    @clip = Clip.all
+	    @user_clips = @user.clips.all
+	    @clips = Clip.page(params[:page]).reverse_order.per(12)
 	end
 
 	def edit

@@ -1,0 +1,1 @@
+$("#favorite_btn_<%= @clip.id %>").html("<%= j(render partial: 'clips/favorite_form', locals: {clip: @clip}) %>");

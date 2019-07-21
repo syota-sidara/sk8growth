@@ -7,26 +7,14 @@
 				<div class="d-flex justify-content-center"><p style="font-size: 50px; font-family: Impact"><%= @clip.title %></p></div>
 				<!-- <h1 style="text-align: center;"><%#= @clip.created_at.strftime('%Y/%m/%d') %><span style="padding-left: 20px;"><br><%= @clip.title %></span></h1> -->
               </div>
-                  <% if user_signed_in? %>
-					<% if @clip.favorited_by?(current_user) %>
-						<li style="list-style: none;" >
-						<%= link_to clip_favorite_path(@clip.id), method: :delete do %>
-						  <i class="far fa-thumbs-up" aria-hidden="true" style="color: blue; font-size: 50px;"></i>
-						  <%= @clip.favorites.count %>
-						<% end %>
-						</li>
-					<% else %>
-						<li style="list-style: none;">
-						<%= link_to clip_favorites_path(@clip.id), method: :post do %>
-						  <i class="far fa-thumbs-up" aria-hidden="true" style="font-size: 50px;"></i>
-						  <%= @clip.favorites.count %>
-						<% end %>
-						</li>
-				    <% end %>
-				  <% else %>
-	  					<i class="far fa-heart" aria-hidden="true" style="font-size: 50px;"></i>
-	  					<%= @clip.favorites.count %>
-		          <% end %>
+
+              
+                    <div id="favorite_btn_<%= @clip.id %>">
+					   <%= render partial: 'favorite_form', locals: { clip: @clip } %>
+					</div>
+
+
+
 				<div class="d-flex justify-content-center" style="padding: 10px">
 					<iframe width="800" height="500" src="https://www.youtube.com/embed/<%=@clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>

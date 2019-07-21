@@ -1,24 +1,30 @@
 <div class="spotshow-wrapper">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-9">
+			<div class="col-xs-9" style="border: 4px solid #82636b; border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px; margin: 2em 0; padding: 2em; width: 100%;">
 				<h1><%= @spot.title %></h1>
 				<p><%= @spot.address %></p>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12">
-				<%= attachment_image_tag @spot, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "550x300" %>
+			<div class="col-12" style="border: 4px solid #82636b; border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px; margin: 2em 0; padding: 2em;">
+				<div class="d-flex justify-content-center">
+					<%= attachment_image_tag @spot, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "550x300" %>
+				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-9">
-				<h2>セクション</h2>
-				　　<p><%= simple_format(@spot.body) %><p>
-				<h2>パーク概要</h2>
-				　　<p><%= simple_format(@spot.content) %><p>	
-				<h2>Google Map</h2>
-				   <iframe width="560" height="360" src="https://maps.google.co.jp/maps?output=embed&q=<%= @spot.map %>"></iframe>
+				<h2 class="title1">セクション</h2>
+				　　<p><strong><%= simple_format(@spot.body) %></strong></p>
+				<h2 class="title2" style="margin-top: 100px;">パーク概要</h2>
+				　　<p><strong><%= simple_format(@spot.content) %></strong></p>	
+				<h2 class="title3" style="margin-top: 100px;">Google Map</h2>
+			</div>
+		</div>
+		<div class="col-12" style="margin-top: 50px;">
+			<div class="d-flex justify-content-center">
+				<iframe width="560" height="360" src="https://maps.google.co.jp/maps?output=embed&q=<%= @spot.map %>"></iframe>
 			</div>
 		</div>
 	</div>
