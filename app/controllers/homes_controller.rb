@@ -1,10 +1,8 @@
 class HomesController < ApplicationController
 	def index
 		 @home = Home.find(3)
-		 # @clip = Clip.find(Favorite.group(:clip_id).order('count(clip_id)desc')).first
 		 @clips = Clip.find(Favorite.group(:clip_id).order('count(clip_id) desc').limit(10).pluck(:clip_id))
 		 @clip = Clip.find(Favorite.group(:clip_id).order('count(clip_id) desc').limit(10).pluck(:clip_id)).first
-		  # @clips = Clip.find(Favorite.group(:clip_id).first('count(clip_id) desc').pluck(:clip_id).first
 
 		 @all_ranks = Clip.find(Favorite.group(:clip_id).order('count(clip_id)desc').limit(3).pluck(:clip_id))
 		 @trends = Trend.all.order(created_at: :desc).limit(6)

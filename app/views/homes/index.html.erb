@@ -1,5 +1,14 @@
 <div class="homeindex-wrapper" style="margin-top: 100px;">
 	<div class="container">
+		<div class="row" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px">
+			<div class="col-12">
+				    <h2>sk8growthとは</h2>
+					<p style="text-align: center;"><strong>スケボーをやりながら成長できたらいいなで</strong></p>
+					<h2 style="text-align: center;">『sk8growth』</h2>
+					<p style="text-align: center;"><strong>あまり深く考えずに暇つぶし程度に見て、使っていただけたら嬉しいです。</strong></p>
+					<p style="text-align: center;">sk8growth 一同</p>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
@@ -22,6 +31,13 @@
 				<h2 class="card-title">今月の Trick Challenge<br><%= @home.challenge %></h2>
 				<p class="card-text">今すぐ投稿してみよう！！！</p>
 				<%= link_to "投稿へ", new_clip_path, class: "btn btn-primary" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<%= link_to "今月のChallengeランキングへ", tricks_path, class: "btn5" %>
+				</div>
 			</div>
 		</div>
 		<div class="row" style="margin-top: 100px;">

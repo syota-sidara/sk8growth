@@ -32,6 +32,6 @@ class TrendsController < ApplicationController
 	private
 
     def trend_params
-    	params.require(:trend).permit(:title, :video, :body, :profile_image, :comment, :secondbody)
+    	params.require(:trend).permit(:title, :video, :body, :profile_image, :comment, :secondbody, :url)
     end
 end

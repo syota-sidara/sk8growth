@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
 
   resources :homes, only: [:index, :update]
+  resources :tricks, only: [:index]
 
   resources :clips, only: [:index, :show, :new, :edit, :create, :update, :destroy] do
       resources :comments,  only: [:create, :destroy]

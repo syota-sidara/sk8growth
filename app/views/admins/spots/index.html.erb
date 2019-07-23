@@ -1,13 +1,18 @@
-<div class="admins-spotindex-wrapper" style="margin-top: 100px;">
+<div class="admins-spotindex-wrapper" style="margin-top: 200px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
 					<h1>Spot List</h1>
-					<%= link_to "追加", new_admins_spot_path, class: "spot-form" %>
-
 			    </div>
 			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-center">
+					<%= link_to "追加", new_admins_spot_path, class: "btn" %>
+				</div>
+		    </div>
 		</div>
 
       <% @spots.each do |spot| %>

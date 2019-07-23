@@ -40,7 +40,7 @@
 		<div class="row" style="margin-top: 50px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-				  <%= attachment_image_tag @trend, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "600x300" %>
+				  <%= attachment_image_tag @trend, :profile_image, format: 'jepg', fallback: "no_image.jpg", size: "600x500" %>
 				</div>
 			</div>
 		</div>
@@ -48,6 +48,13 @@
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
 					<p><strong><%= simple_format(@trend.secondbody) %></strong></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-center" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px;">
+					<a href='<%= @trend.url %>' target="_blank">詳しく</a>
 				</div>
 			</div>
 		</div>

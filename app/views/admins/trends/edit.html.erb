@@ -1,4 +1,4 @@
-<div class="admins-trendedit-wrapper" style="margin-top: 100px;">
+<div class="admins-trendedit-wrapper" style="margin-top: 200px;">
 	<div class="container">
 		<div class="row">
 			<div claas="col-xs-9">
@@ -16,7 +16,9 @@
 				<div><%= f.text_area :body, rows:'5', class: "form-control",placeholder: "内容1" %></div>
 				<h4>Trend Second Body</h4>
 				<div><%= f.text_area :secondbody, rows:'5', class: "form-control",placeholder: "内容2" %></div>
-				<div><%= f.submit '編集', class: "btn" %></div>
+				<h4>Trend Url</h4>
+				<div><%= f.text_field :url, class: "trend-url" %></div>
+				<div style="padding-top: 20px;"><%= f.submit '編集', class: "btn" %></div>
 			  <% end %>
 			</div>
 		</div>
