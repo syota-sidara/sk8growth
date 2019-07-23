@@ -22,8 +22,14 @@
 				<h2>Google Map</h2>
 				   <iframe width="560" height="360" src="https://maps.google.co.jp/maps?output=embed&q=<%= @spot.map %>"></iframe>
 			</div>
-			<%= link_to "編集", edit_admins_spot_path(@spot.id), class: "spot-edit" %>
-			<%= link_to "削除",admins_spot_path(@spot.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "spot-destroy" %>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="d-flex justify-content-end">
+					<%= link_to "編集", edit_admins_spot_path(@spot.id), class: "btn" %>
+					<div style="padding-left: 20px;"><%= link_to "削除",admins_spot_path(@spot.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn" %></div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

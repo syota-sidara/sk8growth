@@ -1,6 +1,5 @@
 class Clip < ApplicationRecord
 	belongs_to :user
-	#belongs_to :home
 	has_many :homes
 	belongs_to :trick
 

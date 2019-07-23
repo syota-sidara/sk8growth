@@ -6,4 +6,7 @@ class Trend < ApplicationRecord
 	validates :title, length: {maximum: 20}
     validates :video,presence: true
     validates :body,presence: true
+    validates :secondbody,presence: true
+    validates :comment,length: {maximum: 20}
+    validates :url,presence: true
 end
