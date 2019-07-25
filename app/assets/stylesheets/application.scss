@@ -24,6 +24,16 @@
 @import "bootstrap";
  
 
+ /*----共通css-----*/
+
+ .link-none {
+  text-decoration: none;
+ }
+
+ .link-none:hover {
+  text-decoration: none;
+ }
+
 
 
 
@@ -530,17 +540,7 @@ form {
   width: 150%;
 }
 
-.example {
-  color: blue;
-  background-color: white;
-  &:hover {
-    color: white;
-    background-color: blue;
-  }
-  &:active {
-    padding: -20px;
-  }
-}
+
 
 .find {
   width: 400px;
@@ -562,8 +562,8 @@ form {
 }
 
 .location {
-  color: blue;
-  background-color: #666666;
+  color: #06e2ff;
+  background-color: #C0C0C0;
   &:hover {
     color: white;
     background-color: white;
@@ -574,22 +574,7 @@ form {
 
 }
 
-.sk8growth {
-  position: relative;
-  }
-
-.sk8growth p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
-  /*文字の装飾は省略*/
-  }
-
-.sk8growth img {
-  width: 100%;
-  }
+.header-title {
+  font-size: 30px;
+  line-height: 0px;
+}
