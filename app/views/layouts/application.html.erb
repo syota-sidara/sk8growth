@@ -5,13 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel='stylesheet' href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
-    <link rel="stylesheet" href="slick.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/skippr.min.js"></script> 
-    <script src="js/script.js"></script> 
+    <!-- <link rel="stylesheet" href="slick.css"> -->
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+<!--     <script src="javascripts/jquery-3.4.1.min.js"></script>
+    <script src="javascripts/skippr.min.js"></script>  -->
+    <!-- <script src="js/script.js"></script>  -->
+    <%= javascript_include_tag 'application' %>
     <!-- <script src="slick.min.js"></script> -->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 
     

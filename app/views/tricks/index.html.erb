@@ -7,36 +7,22 @@
 					<p class="under"><%= @trick.name %></p>
 				</div>
 			</div>
-			<% @all_ranks.each.with_index(1) do |rank,i| %>
+		</div>
+         
+        <div class="row-all col-12">
+			<% @a.each.with_index(1) do |clip,i| %>
 				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px">
 					<h4 style="margin-bottom: 0; padding-top: 10px;padding-left: 10%;"><%= i %>位</h4>
-					<%= link_to clip_path (rank) do %>
-						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= rank.title %></p>
-						<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=rank.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<%= link_to clip_path (clip) do %>
+						<p style="margin-bottom: 0px; padding-top: 10px; font-weight: bold;"><%= clip.title %></p>
+						<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<div class="index-favorites">
 						<i class="far fa-thumbs-up" aria-hidden="true" style="font-size: font-size: 20px;"></i>
-						<%= rank.favorites.count %>
+						<%= clip.favorites.count %>
 					</div>
 					<% end %>
 				</div>
 			<% end %>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<% @clips.each do |clip| %>
-				<div class="clipsplate" style="border: 4px solid white; box-shadow: 0 0 5px gray; margin-top: 50px">
-					<%= link_to clip_path (clip) do %>
-					<iframe width="300" height="200" src="https://www.youtube.com/embed/<%=clip.video%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				    <div class="d-flex justify-content-center">
-				    	<p><%= clip.title %></p>
-				    </div>
-				    <div class="d-flex justify-content-end">
-				    	<p><%= clip.favorites.count %><p>
-				    </div>
-				    <% end %>
-                </div>
-                <% end %>
-			</div>
-		</div>
+		</div>	
 	</div>
 </div>

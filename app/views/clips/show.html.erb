@@ -56,10 +56,12 @@
 
 			                <h4>Clip Trick</h4>
                             <div><%= f.collection_select :trick_id, Trick.all,:id, :name %></div>
+
+					    	<div style="padding-top: 30px;"><%= f.submit '保存', class: "btn2" %></div>
+					 
 					  </div>
 					  <div class="modal-footer">
 					    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-					    <div><%= f.submit '保存', class: "btn" %></div>
 					  </div>
 					  <% end %>
 					</div>
