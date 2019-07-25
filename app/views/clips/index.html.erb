@@ -2,12 +2,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="d-flex justify-content-center">
+				<div class="d-flex justify-content-center" style="padding-top: 20px;">
 					<%= search_form_for @search do |f| %>
 						<form method="get" action="#" class="search_container">
-						  <%= f.text_field :trick_name_cont %>
-						  <button type="submit">
-						  	<i class="fas fa-search"></i>
+						  <%= f.text_field :trick_name_cont, class: "find", placeholder: "検索してみよう！" %>
+						  <button type="submit" style="padding: 15px; cursor: pointer; cursor: pointer; margin-left: 15px;">
+						  	<i class="fas fa-search" style="font-size: 30px; color: lightskyblue;"></i>
 						  </button>
 						</form>
 					<% end %>
@@ -18,7 +18,7 @@
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
 					<h3>Clip List</h3>
-					<div style="padding-left: 20px; font-size: 30px;"><%= link_to "", new_clip_path, class: "fas fa-video" %></div>
+					<div style="padding-left: 20px; font-size: 30px;"><%= link_to "", new_clip_path, data: {:turbolink => false}, class: "fas fa-video" %></div>
 				</div>
 			</div>
 		</div>

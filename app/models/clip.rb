@@ -13,6 +13,6 @@ class Clip < ApplicationRecord
      end
 
      validates :title, length: {maximum: 20}
-     validates :video,presence: true
+     validates :video, length: {maximum: 11}
      validates :body,presence: true
 end
