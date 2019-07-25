@@ -6,17 +6,17 @@
 					<h4>*投稿する際の諸注意*</h4>
 				</div>
 				<div class="d-flex justify-content-center" style="padding-top: 10px;">
-					<p><strong>*YouTubeから投稿する際,その動画の埋め込みコードが</strong></p>
-					<p><strong>必要になります。コードの取得は画像の通りにお願い致します！</strong></p>
+					<p style="border-bottom: solid 3px #ff0000;"><strong>*YouTubeから投稿する際,その動画の埋め込みコードが</strong></p>
+					<p style="border-bottom: solid 3px #ff0000;"><strong>必要になります。コードの取得は画像の通りにお願い致します！</strong></p>
 				</div>
 				<div class="d-flex justify-content-center" style="padding-top: 30px;">
 					<img src="/clipnew.jpg" alt="写真" width="800" height="360">
 				</div>
 				<div class="d-flex justify-content-center" style="padding-top: 30px;">
-					<p><strong>*取得するコードは/embed/以降の11文字だけをコピーして下さい！</strong></p>
+					<p style="border-bottom: solid 3px #ff0000;"><strong>*取得するコードは/embed/以降の11文字だけをコピーして下さい！</strong></p>
 				</div>
 				<div class="d-flex justify-content-center">
-					<p><strong>*コピーしたコードは指定された場所で貼り付けお願い致します!</strong></p>
+					<p style="border-bottom: solid 3px #ff0000;"><strong>*コピーしたコードは指定された場所で貼り付けお願い致します!</strong></p>
 				</div>
 			</div>
 		</div>
@@ -31,24 +31,33 @@
 
 				<%= form_for(@clip, url: clips_path) do |f| %>
 
-                <h4>Clip名</h4>
+                <h4 style="padding-top: 20px;">Clip名</h4>
                 <div><%= f.text_field :title, class: "clip-title" %></div>
 
-                <h4>Clipコード</h4>
+                <h4 style="padding-top: 20px;">Clipコード</h4>
                 <div><%= f.text_area :video, rows:'5', size: "30x1", class: "clip",placeholder: "コードをここに" %></div>
 
-                <h4>Clip情報</h4>
+                <h4 style="padding-top: 20px;">Clip情報</h4>
                 <div><%= f.text_area :body, size: "125x5", class: "clip-body" %></div>
 
-                <h4>Clip Trick</h4>
+                <div class="row">
+                	<div class="col-12">
+                		<img src="/screen.jpg" alt="写真" width="150" height="200" style="padding-top: 20px;">
+                		<div class="d-flex justify-content-center">
+                			<p style="font-size: 20px; border-bottom: solid 3px #ff0000;">＊月のTrick Challengeの投稿する際はその月の()がついてるTrickをお選びください！</p>
+                		</div>
+                	</div>
+                </div>
+
+                <h4 style="padding-top: 20px;">Clip Trick</h4>
                 <div><%= f.collection_select :trick_id, Trick.all,:id, :name %></div>
-
-                <div style="padding-top: 20px;"><%= f.submit '投稿へ', class: "btn", style: "width:100%" %></div>
-
-                <div></div>
-
-              <% end %>
 			</div>
+			<div class="col-12">
+				<div class="d-flex justify-content-end">
+					<div style="padding-top: 20px;"><%= f.submit '投稿へ', class: "btn" %></div>
+				</div>
+			</div>
+           <% end %>
 		</div>
 	</div>
 </div>

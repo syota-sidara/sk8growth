@@ -42,7 +42,6 @@ class ClipsController < ApplicationController
 		@clip = Clip.find(params[:id])
 		@clip.user_id = current_user.id
 		if @clip.update(clip_params)
-		　　flash[:notice] = "更新しました"
 		   redirect_to clip_path
 		else
 			render :edit
