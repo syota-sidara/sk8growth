@@ -4,7 +4,7 @@ class Spot < ApplicationRecord
 	attachment :profile_image
 
 
-	validates :title, length: {maximum: 20}
+	validates :title, presence: true,length: {maximum: 20}
     validates :body,presence: true
     validates :address,presence: true
 end

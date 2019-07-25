@@ -16,18 +16,14 @@
   </head>
 
   <body>
-  <header id="header" style="height: 125px;">
-
-    <% if user_signed_in? %>
-      <div class="header-title"><%= current_user.name %>login中</div>
-    <% end %>
+  <header id="header" style="height: 115px;">
 
   <% if user_signed_in? %>
 
       <nav>
         <ul class="nav-list">
             <li class="nav-item dropdown" style="float: left;">
-              <a class="fas fa-bars" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="fas fa-bars link-none" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 50px;">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <%= link_to "HOME", root_path, class: "dropdown-item" %>
@@ -37,15 +33,15 @@
                  <%= link_to "MYPAGE", user_path(current_user), class: "dropdown-item" %>
               </div>
             </li>
-          <h1 class="header-title" style="font-family: Noto Sans JP, sans-serif;">sk8growth</h1>
-              <li class="nav-list-item">
-                <%= link_to '' , destroy_user_session_path, method: :delete, class: "header-title fas fa-sign-out-alt" %>
+          <h1 class="header-title1 display-4" style="letter-spacing: 13px; font-weight: bold;font-family: 'Bradley Hand',sans-serif;">sk8growth</h1>
+              <li class="nav-list-item ml-lg-5 mr-lg-5">
+                <%= link_to '' , destroy_user_session_path, method: :delete, class: "header-title fas fa-sign-out-alt link-none" %>
               </li>
-              <li class="nav-list-item">
-                <%= link_to "", new_user_session_path, class: "header-title fas fa-sign-in-alt" %>
+              <li class="nav-list-item ml-lg-5 mr-lg-5">
+                <%= link_to "", new_user_session_path, class: "header-title fas fa-sign-in-alt link-none" %>
               </li>
-              <li class="nav-list-item">
-                <%= link_to "", new_clip_path,data: {:turbolink => false}, class: "header-title fas fa-video" %>
+              <li class="nav-list-item ml-lg-5 mr-lg-5">
+                <%= link_to "", new_clip_path,data: {"turbolinks" => false}, class: "header-title fas fa-video link-none" %>
               </li>
         </ul>
       </nav>
@@ -74,25 +70,25 @@
         </div>
       </div>
   <% else %>
-      <nav>
+     <nav>
         <ul class="nav-list">
             <li class="nav-item dropdown" style="float: left;">
-              <a class="fas fa-bars" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="fas fa-bars link-none" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 50px;">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <%= link_to "HOME", root_path, class: "dropdown-item" %>
                  <%= link_to "CLIP", clips_path, class: "dropdown-item" %>
                  <%= link_to "SPOT", spots_path, class: "dropdown-item" %>
                  <%= link_to "TREND", trends_path, class: "dropdown-item" %>
-                 <%= link_to "MYPAGE", new_clip_path, class: "dropdown-item" %>
+                 <%= link_to "MYPAGE", user_path(current_user), class: "dropdown-item" %>
               </div>
             </li>
-          <h1>sk8growth</h1>
-              <li class="nav-list-item">
-                <%= link_to '' , destroy_user_session_path, method: :delete, class: "header-title fas fa-sign-out-alt" %>
+          <h1 class="header-title1 display-4" style="letter-spacing: 13px; font-weight: bold;font-family: 'Bradley Hand',sans-serif;">sk8growth</h1>
+              <li class="nav-list-item ml-lg-5 mr-lg-5">
+                <%= link_to '' , destroy_user_session_path, method: :delete, class: "header-title fas fa-sign-out-alt link-none" %>
               </li>
-              <li class="nav-list-item">
-                <%= link_to "", new_user_session_path, class: "header-title fas fa-sign-in-alt" %>
+              <li class="nav-list-item ml-lg-5 mr-lg-5">
+                <%= link_to "", new_user_session_path, class: "header-title fas fa-sign-in-alt link-none" %>
               </li>
         </ul>
       </nav>
@@ -172,7 +168,7 @@
     <%= yield %>
     <div style="margin-bottom: 300px;">
     </div>
-    <footer id="footer">
+    <footer id="footer" style="height: 70px;">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="">2019</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -192,6 +188,11 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            </li>
+            <li class="nav-item">
+              <% if user_signed_in? %>
+                <div class="nav-link" style="font-size: 20px;"><%= current_user.name %>login中</div>
+              <% end %>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">

@@ -3,10 +3,10 @@ class Trend < ApplicationRecord
 
 	has_many :homes
 
-	validates :title, length: {maximum: 20}
+	validates :title,presence: true,length: {maximum: 20}
     validates :video,presence: true
     validates :body,presence: true
     validates :secondbody,presence: true
-    validates :comment,length: {maximum: 20}
+    validates :comment, presence: true,length: {maximum: 20}
     validates :url,presence: true
 end

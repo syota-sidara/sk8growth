@@ -12,7 +12,7 @@ class Clip < ApplicationRecord
           favorites.where(user_id: user.id).exists?
      end
 
-     validates :title, length: {maximum: 20}
-     validates :video, length: {maximum: 11}
+     validates :title, presence: true,length: {maximum: 20}
+     validates :video, presence: true,length: {maximum: 11}
      validates :body,presence: true
 end

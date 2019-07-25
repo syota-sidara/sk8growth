@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h2 id="animation"><%= @home.title %></h2>
+					<h2 id="animation" style="font-family: 'Bradley Hand',sans-serif;"><%= @home.title %></h2>
 				</div>
 			</div>		
 		</div>
@@ -30,20 +30,20 @@
 			<div class="card-body">
 				<h2 class="card-title">今月の Trick Challenge<br><%= @home.challenge %></h2>
 				<p class="card-text">今すぐ投稿してみよう！！！</p>
-				<%= link_to "投稿へ", new_clip_path, data: {:turbolink => false}, class: "btn btn-primary" %>
+				<%= link_to "投稿へ", new_clip_path,data: {"turbolinks" => false}, class: "btn btn-primary" %>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<%= link_to "今月Trickランキングへ", tricks_path, class: "btn5 btn-primary" %>
+					<%= link_to "今月Trickランキングへ", tricks_path, class: "btn5 btn-primary link-none" %>
 				</div>
 			</div>
 		</div>
 		<div class="row" style="margin-top: 100px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h2 id="animation3">HOW TO</h2>
+					<h2 id="animation3" style="font-family: 'Bradley Hand',sans-serif;">HOW TO</h2>
 				</div>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h2 id="animation5">FAVORITE RANKING</h2>
+					<h2 id="animation5" style="font-family: 'Bradley Hand',sans-serif;">FAVORITE RANKING</h2>
 				</div>
 			</div>
 		</div>
@@ -91,7 +91,7 @@
 		<div class="row" style="margin-top: 10px;">
 			<div class="col-12">
 				<div class="d-flex justify-content-center">
-					<h2 id="animation6">TREND</h2>
+					<h2 id="animation6" style="font-family: 'Bradley Hand',sans-serif;">TREND</h2>
 				</div>
 			</div>
 		</div>
