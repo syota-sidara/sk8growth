@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_054301) do
+ActiveRecord::Schema.define(version: 2019_07_22_083505) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -61,14 +61,6 @@ ActiveRecord::Schema.define(version: 2019_07_23_054301) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
-    t.integer "spot_id"
-    t.integer "trend_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "image_id"
-  end
-
   create_table "impressions", force: :cascade do |t|
     t.string "impressionable_type"
     t.integer "impressionable_id"
@@ -111,8 +103,6 @@ ActiveRecord::Schema.define(version: 2019_07_23_054301) do
     t.text "content"
     t.string "map"
     t.integer "location_id"
-    t.string "url"
-    t.string "category"
   end
 
   create_table "trends", force: :cascade do |t|
@@ -132,7 +122,6 @@ ActiveRecord::Schema.define(version: 2019_07_23_054301) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "month"
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
