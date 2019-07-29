@@ -17,3 +17,22 @@ Trick.find_or_create_by(:name => "FLIP(9月)", :month => 9)
 Trick.find_or_create_by(:name => "SLIDE(10月)", :month => 10)
 Trick.find_or_create_by(:name => "FREE STYLE(11月)", :month => 11)
 Trick.find_or_create_by(:name => "STREET(12月)", :month => 12)
+
+Home.find_or_create_by(:title => "ToDay Clip", :challenge => "OLIIE", :video => "TFy8YZLfczs")
+
+
+
+
+
+Location.find_or_create_by(:name => "北海道")
+Location.find_or_create_by(:name => "東北")
+Location.find_or_create_by(:name => "関東")
+Location.find_or_create_by(:name => "東海・北陸")
+Location.find_or_create_by(:name => "近畿")
+Location.find_or_create_by(:name => "中国")
+Location.find_or_create_by(:name => "四国・九州")
+
+
+
+
+

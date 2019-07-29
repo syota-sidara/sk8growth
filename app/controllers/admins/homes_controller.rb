@@ -2,7 +2,7 @@ class Admins::HomesController < ApplicationController
   
   def index
     
-    @home = Home.find(3)
+    @home = Home.find(1)
     @trends = Trend.all.order(created_at: :desc).limit(3)
     @clips = Clip.find(Favorite.group(:clip_id).order('count(clip_id) desc').limit(10).pluck(:clip_id))
   end
