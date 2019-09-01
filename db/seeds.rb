@@ -20,6 +20,12 @@ Trick.find_or_create_by(:name => "STREET(12月)", :month => 12)
 
 Home.find_or_create_by(:title => "ToDay Clip", :challenge => "OLIIE", :video => "TFy8YZLfczs")
 
+User.find_or_create_by(:email => "test@test", :name => "test", :password => "123456")
+
+Clip.find_or_create_by(:user_id => 1, :video => "TFy8YZLfczs", :title => "test", :body => "test", :trick_id => 1)
+
+Favorite.find_or_create_by(:user_id => 1, :clip_id => 1)
+
 
 
 
