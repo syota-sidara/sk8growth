@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
+  root 'homes#index'
   
   devise_for :admins
   devise_for :users
-  root 'homes#index'
+
   get 'master' => 'admins/homes#index'
   get 'master/top' => 'admins/homes#top'
 
